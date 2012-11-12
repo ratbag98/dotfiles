@@ -16,3 +16,8 @@ dotfiles
 
     git submodule init
     git submodule update
+
+    cd vim/ruby/command-t
+    ruby extconf.rb 
+    make
+    
