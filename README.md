@@ -10,6 +10,7 @@ dotfiles
 
     ln -s dotfiles/vimrc .vimrc
     ln -s dotfiles/vimrc .gvimrc
+    ln -s dotfiles/vim   .vim
 
     git submodule init
     git submodule update
