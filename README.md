@@ -12,5 +12,7 @@ dotfiles
     ln -s dotfiles/vimrc .gvimrc
     ln -s dotfiles/vim   .vim
 
+    cd dotfiles
+
     git submodule init
     git submodule update
