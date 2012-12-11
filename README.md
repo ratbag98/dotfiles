@@ -12,6 +12,8 @@ dotfiles
     ln -s dotfiles/vimrc .gvimrc
     ln -s dotfiles/vim   .vim
 
+    ln -s dotfiles/gemrc .gemrc
+
     cd dotfiles
 
     git submodule init
