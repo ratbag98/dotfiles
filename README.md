@@ -13,6 +13,8 @@ dotfiles
     ln -s dotfiles/vim   .vim
 
     ln -s dotfiles/gemrc .gemrc
+    ln -s dotfiles/pryrc .pryrc
+    ln -s dotfiles/irbrc .irbrc
 
     cd dotfiles
 
