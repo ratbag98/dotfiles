@@ -10,11 +10,6 @@ call pathogen#helptags()
 let mapleader = ","
 
 set background=dark
-let g:Powerline_symbols = 'fancy'
-if has('gui_running')
-  set guifont=Menlo\ for\ Powerline:h11
-  set guioptions=egmrt  " hide the gui menubar
-end
 
 set backspace=indent,eol,start "allow backspacing over everything in insert mode
 
