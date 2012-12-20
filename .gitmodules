@@ -29,3 +29,6 @@
 [submodule "vim/bundle/commentary"]
 	path = vim/bundle/commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/dbext"]
+	path = vim/bundle/dbext
+	url = https://github.com/vim-scripts/dbext.vim.git
