@@ -392,7 +392,7 @@ set listchars=tab:▸\ ,eol:¬ "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 colorscheme base16-default
 
 " coffee optimizations
-au BufWritePost *.coffee silent CoffeeMake!
+" au BufWritePost *.coffee silent CoffeeMake!
 au BufNewFile,BufReadPost *.coffee
       \ setl shiftwidth=2 expandtab foldmethod=indent nofoldenable
 
@@ -424,4 +424,7 @@ set formatprg=par
 set winheight=5
 set winminheight=5
 set winheight=999
-
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
