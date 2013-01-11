@@ -24,4 +24,8 @@ dotfiles
     cd vim/ruby/command-t
     ruby extconf.rb 
     make
+
+    For Pry:
+        rvm gemset use global
+        gem install pry pry-doc
     
