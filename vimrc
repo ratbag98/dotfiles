@@ -424,7 +424,3 @@ set formatprg=par
 set winheight=5
 set winminheight=5
 set winheight=999
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
