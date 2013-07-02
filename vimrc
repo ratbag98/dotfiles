@@ -97,7 +97,7 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256 " 256 colors
 :set background=dark
-" :color grb256
+:color solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
@@ -388,8 +388,6 @@ call pathogen#helptags()
 set number      "show line numbers
 set list        "display tabs and trailing spaces
 set listchars=tab:▸\ ,eol:¬ "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-
-colorscheme base16-default
 
 " coffee optimizations
 " au BufWritePost *.coffee silent CoffeeMake!
