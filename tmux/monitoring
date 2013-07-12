@@ -1,0 +1,18 @@
+tmux  new-session -s monitoring -n top -d
+tmux send-keys -t monitoring 'top' C-m
+
+tmux split-window -v -t monitoring
+tmux select-layout -t monitoring main-vertical
+
+tmux send-keys -t monitoring:1.2 'sudo tail -f /var/log/messages' C-m
+
+tmux split-window -v -t monitoring:1 -p 70
+tmux split-window -v -t monitoring:1
+
+tmux send-keys -t monitoring:1.4 'watch -n3 "dmesg | tail -f -n15"' C-m
+
+tmux select-window -t monitoring:1
+tmux select-pane -t monitoring:1.3
+
+tmux attach -t monitoring
+

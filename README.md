@@ -16,6 +16,9 @@ dotfiles
     ln -s dotfiles/pryrc .pryrc
     ln -s dotfiles/irbrc .irbrc
 
+    ln -s dotfiles/tmux .tmux-sessions
+    ln -s dotfiles/tmux.conf .tmux.conf
+
     cd dotfiles
 
     git submodule init
