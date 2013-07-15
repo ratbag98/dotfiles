@@ -412,7 +412,9 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
-set clipboard=unnamed
+if $TMUX == ''
+    set clipboard+=unnamed
+endif
 
 set formatprg=par
 
