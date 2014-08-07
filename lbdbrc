@@ -1,0 +1,2 @@
+METHODS="m_muttalias m_osx_addressbook"
+SORT_OUTPUT=name

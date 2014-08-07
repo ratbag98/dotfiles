@@ -19,6 +19,8 @@ dotfiles
     ln -s dotfiles/tmux .tmux-sessions
     ln -s dotfiles/tmux.conf .tmux.conf
 
+    ln -s dotfiles/lbdbrc .lbdbrc
+    
     cd dotfiles
 
     git submodule init
