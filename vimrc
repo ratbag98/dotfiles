@@ -4,10 +4,65 @@
 
 " call pathogen#runtime_append_all_bundles()
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
+
+" Vundle begins
+
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kchmck/vim-coffee-script'
+
+
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-cucumber.git'
+Plugin 'vim-ruby/vim-ruby.git'
+Plugin 'pangloss/vim-javascript.git'
+Plugin 'vim-scripts/ack.vim.git'
+Plugin 'tpope/vim-commentary.git'
+Plugin 'chriskempson/base16-iterm2.git'
+Plugin 'tpope/vim-unimpaired.git'
+Plugin 'rizzatti/funcoo.vim.git'
+Plugin 'rizzatti/dash.vim.git'
+Plugin 'tpope/vim-ragtag.git'
+Bundle 'mbadran/headlights'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Vundle stuff ends
+
+
+
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
 " remember more commands and search history
