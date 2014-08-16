@@ -1,59 +1,30 @@
 
 " This is Gary Bernhardt's .vimrc file
-" vim:set ts=2 sts=2 sw=2 expandtab:
 
-" call pathogen#runtime_append_all_bundles()
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" BASIC EDITING CONFIGURATION
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 
 " Vundle begins
-
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'kchmck/vim-coffee-script'
-
-
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-cucumber.git'
+Plugin 'tpope/vim-commentary.git'
+Plugin 'tpope/vim-unimpaired.git'
+Plugin 'tpope/vim-ragtag.git'
 Plugin 'vim-ruby/vim-ruby.git'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript.git'
 Plugin 'vim-scripts/ack.vim.git'
-Plugin 'tpope/vim-commentary.git'
 Plugin 'chriskempson/base16-iterm2.git'
-Plugin 'tpope/vim-unimpaired.git'
 Plugin 'rizzatti/funcoo.vim.git'
 Plugin 'rizzatti/dash.vim.git'
-Plugin 'tpope/vim-ragtag.git'
 Bundle 'mbadran/headlights'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -134,12 +105,12 @@ augroup vimrcEx
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
+  " Don't syntax highlight markdown because it's often wrong
+  autocmd! FileType mkd setlocal syn=off
 
   " Indent p tags
   autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
 
-  " Don't syntax highlight markdown because it's often wrong
-  autocmd! FileType mkd setlocal syn=off
 
   " Leave the return key alone when in command line windows, since it's used
   " to run commands there.
@@ -436,9 +407,6 @@ command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
 
 " my vim settings, overriding Gary's
-"activate pathogen
-call pathogen#infect()
-call pathogen#helptags()
 
 set number      "show line numbers
 set list        "display tabs and trailing spaces
@@ -479,3 +447,8 @@ set formatprg=par
 set winheight=5
 set winminheight=5
 set winheight=999
+
+" don't indent pasted stuff
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
