@@ -17,6 +17,7 @@ Plugin 'tpope/vim-cucumber.git'
 Plugin 'tpope/vim-commentary.git'
 Plugin 'tpope/vim-unimpaired.git'
 Plugin 'tpope/vim-ragtag.git'
+Plugin 'tpope/vim-surround.git'
 Plugin 'vim-ruby/vim-ruby.git'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript.git'
@@ -25,6 +26,7 @@ Plugin 'chriskempson/base16-iterm2.git'
 Plugin 'rizzatti/funcoo.vim.git'
 Plugin 'rizzatti/dash.vim.git'
 Bundle 'mbadran/headlights'
+Bundle 'kien/ctrlp.vim.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -102,6 +104,7 @@ augroup vimrcEx
     autocmd FileType python set sw=4 sts=4 et
 
     autocmd! BufRead,BufNewFile *.sass setfiletype sass
+    autocmd! BufRead,BufNewFile *.axlsx setfiletype ruby
 
     autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
     autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
@@ -123,7 +126,7 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256 " 256 colors
 :set background=dark
-:color solarized
+" :color solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE

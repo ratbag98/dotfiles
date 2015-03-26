@@ -12,7 +12,7 @@
 [merge]
   tool = vimdiff
 [push]
-  default = simple
+	default = matching
 [color]
   ui = auto
 [alias]
