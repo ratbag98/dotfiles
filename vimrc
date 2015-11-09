@@ -25,7 +25,6 @@ Plugin 'vim-scripts/ack.vim.git'
 Plugin 'chriskempson/base16-iterm2.git'
 Plugin 'rizzatti/funcoo.vim.git'
 Plugin 'rizzatti/dash.vim.git'
-Bundle 'mbadran/headlights'
 Bundle 'kien/ctrlp.vim.git'
 
 " All of your Plugins must be added before the following line

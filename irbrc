@@ -16,6 +16,8 @@ if defined?(::Bundler)
     end
   end
 end
+require 'irb/completion'
+
 # Use Pry everywhere
 require "rubygems"
 require 'pry'
