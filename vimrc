@@ -25,7 +25,9 @@ Plugin 'vim-scripts/ack.vim.git'
 Plugin 'chriskempson/base16-iterm2.git'
 Plugin 'rizzatti/funcoo.vim.git'
 Plugin 'rizzatti/dash.vim.git'
+Plugin 'scrooloose/syntastic.git'
 Bundle 'kien/ctrlp.vim.git'
+Plugin 'elixir-lang/vim-elixir'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -454,3 +456,14 @@ set winheight=999
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+" syntastic additions
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
