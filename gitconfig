@@ -1,6 +1,6 @@
 [user]
-  name = Rob Rainthorpe
-  email = robr@alptrading.ch
+	name = Rob Rainthorpe
+	email = rob@nxtlevelyou.com
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -56,4 +56,10 @@
 
 
 [core]
-	excludesfile = /Users/rob/.gitignore
+	excludesfile = /Users/robr/.gitignore_global
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[repack]
+	writeBitmaps = true
