@@ -23,8 +23,9 @@ dotfiles
     
     cd dotfiles
 
-    git submodule init
-    git submodule update
+    # Vundle manages vim bundles for us:
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 
     cd vim/ruby/command-t
     ruby extconf.rb 
