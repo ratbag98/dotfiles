@@ -1,6 +1,6 @@
 [user]
 	name = Rob Rainthorpe
-	email = rob@nxtlevelyou.com
+	email = robr@robrainthorpe.com
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
