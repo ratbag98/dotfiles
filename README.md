@@ -20,6 +20,9 @@ dotfiles
     ln -s dotfiles/tmux.conf .tmux.conf
 
     ln -s dotfiles/lbdbrc .lbdbrc
+
+    ln -s dotfiles/Brewfile Brewfile
+    brew bundle install
     
     cd dotfiles
 

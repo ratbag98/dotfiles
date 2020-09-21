@@ -63,3 +63,5 @@
 	required = true
 [repack]
 	writeBitmaps = true
+[commit]
+	template = /Users/rob/.stCommitMsg
