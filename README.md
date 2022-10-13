@@ -24,6 +24,7 @@ dotfiles
     ln -s dotfiles/lbdbrc .lbdbrc
 
     ln -s dotfiles/Brewfile Brewfile
+    ln -s dotfiles/tool-versions .tool-versions
     brew bundle install
     
     cd dotfiles
