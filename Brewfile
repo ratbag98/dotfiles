@@ -1,5 +1,4 @@
 mas "Animoog Z", id: 1586841361
-mas "Bear", id: 1091189122
 mas "com.kirsteins.chords-and-scales-mac", id: 1435473426
 mas "Craft", id: 1487937127
 mas "Drafts", id: 1435957248
@@ -14,7 +13,6 @@ mas "MindNode", id: 1289197285
 mas "miRack", id: 1468259834
 mas "Model 15", id: 1041465860
 mas "Motion", id: 434290957
-mas "NordVPN", id: 905953485
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "PCalc", id: 403504866
