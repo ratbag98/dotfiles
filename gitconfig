@@ -65,3 +65,5 @@
 	writeBitmaps = true
 [commit]
 	template = /Users/rob/.stCommitMsg
+[init]
+	templatedir = ~/.git_template
