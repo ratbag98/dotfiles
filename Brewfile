@@ -1,3 +1,39 @@
+mas "Animoog Z", id: 1586841361
+mas "Bear", id: 1091189122
+mas "com.kirsteins.chords-and-scales-mac", id: 1435473426
+mas "Craft", id: 1487937127
+mas "Drafts", id: 1435957248
+mas "FileBot", id: 905384638
+mas "Final Cut Pro", id: 424389933
+mas "Keynote", id: 409183694
+mas "Mactracker", id: 430255202
+mas "Magnet", id: 441258766
+mas "Metadatics", id: 554883654
+mas "MIDI Loupe", id: 507075182
+mas "MindNode", id: 1289197285
+mas "miRack", id: 1468259834
+mas "Model 15", id: 1041465860
+mas "Motion", id: 434290957
+mas "NordVPN", id: 905953485
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "PCalc", id: 403504866
+mas "PDF Expert", id: 1055273043
+mas "Playgrounds", id: 1496833156
+mas "PolyWave", id: 1579538271
+mas "Remote Desktop", id: 409907375
+mas "SMARTReporter", id: 509148961
+mas "Speedtest", id: 1153157709
+mas "Telegram", id: 747648890
+mas "TestFlight", id: 899247664
+mas "TNEF's Enough", id: 986621173
+mas "Trello", id: 1278508951
+mas "WhatsApp", id: 1147396723
+mas "WiFi Explorer", id: 494803304
+mas "Wipr", id: 1320666476
+mas "Xcode", id: 497799835
+mas "Yubico Authenticator", id: 1497506650
+mas "ZOA", id: 1581881354
 tap "adoptopenjdk/openjdk"
 tap "beeftornado/rmtree"
 tap "homebrew/bundle"

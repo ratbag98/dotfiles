@@ -8,6 +8,8 @@ dotfiles
     ln -s dotfiles/gitignore .gitignore
     ln -s dotfiles/githelpers .githelpers
 
+    ln -s dotfiles/config .config
+
     ln -s dotfiles/vimrc .vimrc
     ln -s dotfiles/vimrc .gvimrc
     ln -s dotfiles/vim   .vim

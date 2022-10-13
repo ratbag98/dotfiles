@@ -5,3 +5,4 @@ vim/ruby/command-t/mkmf.log
 vim/doc/tags
 /vim/bundle/
 .DS_Store
+config/iterm2
