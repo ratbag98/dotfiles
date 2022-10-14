@@ -2,5 +2,5 @@ elixir 1.14.1-otp-25
 erlang 25.1.1
 nodejs 14.1.0
 python 3.9.4
-rebar 3.14.0
+rebar 3.19.0
 ruby 3.0.0
