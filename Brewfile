@@ -29,14 +29,12 @@ mas "Trello", id: 1278508951
 mas "WhatsApp", id: 1147396723
 mas "WiFi Explorer", id: 494803304
 mas "Wipr", id: 1320666476
-mas "Xcode", id: 497799835
 mas "Yubico Authenticator", id: 1497506650
 mas "ZOA", id: 1581881354
 tap "adoptopenjdk/openjdk"
 tap "beeftornado/rmtree"
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "mas-cli/tap"
