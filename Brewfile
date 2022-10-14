@@ -120,8 +120,5 @@ brew "watch"
 brew "wget"
 brew "wxwidgets"
 brew "zlib"
-brew "zsh"
-brew "zsh-syntax-highlighting"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
-cask "graphql-playground"
 cask "xquartz"
