@@ -1,4 +1,3 @@
-mas "Animoog Z", id: 1586841361
 mas "com.kirsteins.chords-and-scales-mac", id: 1435473426
 mas "Craft", id: 1487937127
 mas "Drafts", id: 1435957248
@@ -18,7 +17,6 @@ mas "Pages", id: 409201541
 mas "PCalc", id: 403504866
 mas "PDF Expert", id: 1055273043
 mas "Playgrounds", id: 1496833156
-mas "PolyWave", id: 1579538271
 mas "Remote Desktop", id: 409907375
 mas "SMARTReporter", id: 509148961
 mas "Speedtest", id: 1153157709
@@ -30,11 +28,11 @@ mas "WhatsApp", id: 1147396723
 mas "WiFi Explorer", id: 494803304
 mas "Wipr", id: 1320666476
 mas "Yubico Authenticator", id: 1497506650
-mas "ZOA", id: 1581881354
 tap "adoptopenjdk/openjdk"
 tap "beeftornado/rmtree"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "mas-cli/tap"
@@ -73,7 +71,6 @@ brew "gnu-tar"
 brew "graphviz"
 brew "grep"
 brew "gsettings-desktop-schemas"
-brew "shared-mime-info"
 brew "jq"
 brew "lego"
 brew "less"
@@ -93,7 +90,6 @@ brew "neovim"
 brew "nmap"
 brew "npth"
 brew "pandoc"
-brew "perl"
 brew "pgformatter"
 brew "pinentry"
 brew "poppler"
@@ -105,10 +101,10 @@ brew "recode"
 brew "rename"
 brew "rsnapshot"
 brew "rsync"
+brew "shared-mime-info"
 brew "shellcheck"
 brew "sox"
 brew "ssh-copy-id"
-brew "the_silver_searcher"
 brew "tidy-html5"
 brew "tmux"
 brew "tree"
@@ -118,5 +114,8 @@ brew "watch"
 brew "wget"
 brew "wxwidgets"
 brew "zlib"
-brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
+cask "font-fira-code-nerd-font"
+cask "font-fira-mono-nerd-font"
+cask "font-meslo-lg-nerd-font"
+cask "graphql-playground"
 cask "xquartz"
