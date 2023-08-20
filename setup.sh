@@ -6,3 +6,5 @@ ln -s dotfiles/Brewfile Brewfile
 ln -s dotfiles/tool-versions .tool-versions
 ln -s dotfiles/default-mix-commands .default-mix-commands
 mkdir -p ~/.git_template
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
