@@ -7,3 +7,4 @@ vim/doc/tags
 .DS_Store
 config/iterm2
 config/gh
+config/fish
