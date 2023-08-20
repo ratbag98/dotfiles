@@ -8,3 +8,5 @@ vim/doc/tags
 config/iterm2
 config/gh
 config/fish
+tmux
+config/tmux/plugins/
