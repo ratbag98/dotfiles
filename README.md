@@ -10,6 +10,7 @@ Fish config is excluded deliberately
     ln -s dotfiles/gitignore .gitignore
     ln -s dotfiles/githelpers .githelpers
     ln -s dotfiles/config .config
+    ln -s dotfiles/tmux .tmux
     ln -s dotfiles/Brewfile Brewfile
     ln -s dotfiles/tool-versions .tool-versions
     
