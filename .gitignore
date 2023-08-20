@@ -10,3 +10,4 @@ config/gh
 config/fish
 tmux
 config/tmux/plugins/
+config/node_modules/
