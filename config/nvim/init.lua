@@ -319,7 +319,7 @@ require('nvim-treesitter.configs').setup {
   sync_install = false,
 
   -- List of parsers to ignore installing
-  ignore_install = {},
+  ignore_install = { 'markdown' },
 
   highlight = { enable = true },
   indent = { enable = true },
@@ -440,6 +440,7 @@ end
 local servers = {
   -- clangd = {},
   -- gopls = {},
+  elixirls = {},
   pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
