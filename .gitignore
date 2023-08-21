@@ -7,7 +7,6 @@ vim/doc/tags
 .DS_Store
 config/iterm2
 config/gh
-config/fish
 tmux
 config/tmux/plugins/
 config/node_modules/
