@@ -1,12 +1,8 @@
 .netrwhist
-vim/ruby/command-t/Makefile
-vim/ruby/command-t/ext.bundle
-vim/ruby/command-t/mkmf.log
-vim/doc/tags
-/vim/bundle/
 .DS_Store
 config/iterm2
 config/gh
 tmux
 config/tmux/plugins/
 config/node_modules/
+.cfg
