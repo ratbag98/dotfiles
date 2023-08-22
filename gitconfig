@@ -67,7 +67,7 @@
 
 
 [core]
-	excludesfile = /Users/rob/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	pager = delta
 [filter "lfs"]
 	clean = git-lfs clean %f
@@ -76,6 +76,6 @@
 [repack]
 	writeBitmaps = true
 [commit]
-	template = /Users/rob/.stCommitMsg
+	template = ~/.stCommitMsg
 [init]
 	templatedir = ~/.git_template
