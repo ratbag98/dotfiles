@@ -79,3 +79,4 @@
 	template = ~/.stCommitMsg
 [init]
 	templatedir = ~/.git_template
+	defaultBranch = master
