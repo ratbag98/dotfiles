@@ -5,4 +5,5 @@ config/gh
 tmux
 config/tmux/plugins/
 config/node_modules/
+config/fish
 .cfg
