@@ -126,10 +126,11 @@ require('lazy').setup({
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
   require 'custom.plugins.autoformat',
-  require 'custom.plugins.debug',
+  -- require 'custom.plugins.debug',  NEEDS REJIG FOR PYTHON / ELIXIR
   require('custom.plugins.bufferline'),
   require('custom.plugins.catppucin'),
   require('custom.plugins.markdown-preview'),
+  require('custom.plugins.mini'),
   require('custom.plugins.neo-tree'),
   require('custom.plugins.neotest'),
   require('custom.plugins.treesitter'),

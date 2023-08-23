@@ -7,7 +7,6 @@ require('custom.core.options')
 
 require('custom.config.lspconfig')
 require('custom.config.telescope')
-
 require('custom.config.cmp_luasnip')
 
 require('custom.core.colorscheme')
