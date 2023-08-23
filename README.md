@@ -20,3 +20,8 @@ and install plugins:
 ```bash
 fisher update
 ```
+Add `asdf` to fish config. Add the following to `.config/fish/config.fish`:
+
+```text
+source ~/.asdf/asdf.fish
+````
