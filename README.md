@@ -1,16 +1,12 @@
 dotfiles
 ========
 
-Fish config is excluded deliberately
+Fish config is excluded deliberately - it doesn't have a clean host-specific configuration mechanism.
 
-    cd ~
-    git clone git@github.com:ratbag98/dotfiles.git dotfiles
+Clone the repo then
 
-    ln -s dotfiles/gitconfig .gitconfig
-    ln -s dotfiles/gitignore .gitignore
-    ln -s dotfiles/githelpers .githelpers
-    ln -s dotfiles/config .config
-    ln -s dotfiles/Brewfile Brewfile
-    ln -s dotfiles/tool-versions .tool-versions
-    
-    mkdir .tmux
+```bash
+cd
+chmod +x dotfiles/setup.sh
+dotfiles/setup.sh
+```
