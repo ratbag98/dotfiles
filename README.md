@@ -10,3 +10,14 @@ cd
 chmod +x dotfiles/setup.sh
 dotfiles/setup.sh
 ```
+Restart terminal. Copy the fish plugins file over:
+
+```bash
+cp dotfiles/fish_plugins ~/.config/fish`
+```
+
+and install:
+
+```bash
+fisher update
+```
