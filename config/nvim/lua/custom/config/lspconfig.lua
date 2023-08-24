@@ -52,6 +52,7 @@ end
 local servers = {
   elixirls = {},
   pyright = {},
+  rust_analyzer = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {

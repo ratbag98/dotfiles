@@ -120,7 +120,7 @@ require('lazy').setup({
 
   { 'nvim-neotest/neotest-python' },
   { 'mbbill/undotree' },
-
+  { 'simrat39/rust-tools.nvim' },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
