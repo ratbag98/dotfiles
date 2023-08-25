@@ -2,6 +2,16 @@
 	name = Rob Rainthorpe
 	email = robr@robrainthorpe.com
 
+[diff]
+	colorMoved = default
+	tool = "difftastic"
+
+[difftool]
+	prompt = false
+
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+
 [interactive]
 	diffFilter = delta --color-only
 
@@ -10,14 +20,6 @@
 	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 
 
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[diff]
-	colorMoved = default
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
@@ -46,9 +48,6 @@
 # Divergence (commits we added and commits remote added)
 	div = divergence
 
-# Goodness (summary of diff lines added/removed/total)
-	gn = goodness
-	gnc = goodness --cached
 
 # Fancy logging.
 #   h = head
