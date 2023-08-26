@@ -44,3 +44,6 @@ vim.o.termguicolors = true
 -- Treesitter folding
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.wo.foldnestmax = 10
+vim.wo.foldenable = false
+vim.wo.foldlevel = 2
