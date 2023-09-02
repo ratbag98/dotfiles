@@ -5,9 +5,29 @@ return {
   config = function()
     require('nvim-treesitter.configs').setup {
       -- Add languages to be installed here that you want installed for treesitter
-      ensure_installed = { 'c', 'cpp', 'comment', 'elixir', 'go', 'lua', 'python', 'rust', 'sql', 'tsx', 'typescript',
+      ensure_installed = {
+        'bash',
+        'c',
+        'cpp',
+        'comment',
+        'elixir',
+        'html',
+        'javascript',
+        'jsdoc',
+        'json',
+        'lua',
+        'markdown',
+        'markdown_inline',
+        'python',
+        'regex',
+        'rust',
+        'sql',
+        'tsx',
+        'typescript',
         'vimdoc',
-        'vim' },
+        'vim',
+        'yaml',
+      },
 
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
       auto_install = true,
@@ -32,7 +52,7 @@ return {
       textobjects = {
         select = {
           enable = true,
-          lookahead = true,   -- Automatically jump forward to textobj, similar to targets.vim
+          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
           keymaps = {
             -- You can use the capture groups defined in textobjects.scm
             ['aa'] = '@parameter.outer',
@@ -45,7 +65,7 @@ return {
         },
         move = {
           enable = true,
-          set_jumps = true,   -- whether to set jumps in the jumplist
+          set_jumps = true, -- whether to set jumps in the jumplist
           goto_next_start = {
             [']m'] = '@function.outer',
             [']]'] = '@class.outer',
