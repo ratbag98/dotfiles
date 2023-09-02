@@ -1,13 +1,13 @@
 -- ripgrep and fd will definitely need installing before this will work
 
-require('core.keymaps')
-require('core.bootstrap_lazy')
-require('lazy').setup("core.plugins")
-require('core.options')
+require('config.keymaps')
+require('config.bootstrap_lazy')
+require('lazy').setup("plugins")
+require('config.options')
 
-require('custom.config.lspconfig')
-require('custom.config.telescope')
-require('custom.config.cmp_luasnip')
+require('config.lspconfig')
+require('config.telescope')
+require('config.cmp_luasnip')
 
-require('core.colorscheme')
+require('config.colorscheme')
 -- vim: ts=2 sts=2 sw=2 et
