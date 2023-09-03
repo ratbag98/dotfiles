@@ -12,12 +12,19 @@ return {
       -- Useful status updates for LSP
       { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
       { "folke/neodev.nvim", opts = {} },
+      { 'simrat39/rust-tools.nvim' },
     },
     config = function()
       -- must be loaded before lspconfig
       require('neodev').setup({
         library = { plugins = { "neotest" }, types = true },
       })
+
+      require('fidget').setup {
+        window = {
+          blend = 0,
+        },
+      }
 
       local lspconfig = require('lspconfig')
 

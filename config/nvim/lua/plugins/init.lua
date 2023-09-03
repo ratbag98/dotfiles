@@ -13,8 +13,5 @@ return {
 
   { 'mbbill/undotree' },
 
-  -- TODO should these be moved into LSP config
-  { 'simrat39/rust-tools.nvim' },
-
 }
 -- vim: ts=2 sts=2 sw=2 et

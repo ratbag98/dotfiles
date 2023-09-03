@@ -7,15 +7,15 @@ return {
     local mason = require('mason')
     local mason_lspconfig = require('mason-lspconfig')
 
+    -- enable mason and configure icons
     mason.setup({
-      -- ui = {
-      --   icons = {
-      --     -- package_installed = "",
-      --     -- package_pending = "",
-      --     -- package_uninstalled = ""
-      --   }
-      -- },
-
+      ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+      }
     })
 
     mason_lspconfig.setup({
@@ -33,7 +33,7 @@ return {
         'elixirls',
         'rust_analyzer'
       },
-      automatic_installtion = true,
+      automatic_installation = true,
 
     })
   end,
