@@ -10,7 +10,7 @@ return {
         'c',
         'cpp',
         'comment',
-        'elixir',
+        'elixir', 'heex', 'eex',
         'html',
         'javascript',
         'jsdoc',

@@ -1,0 +1,13 @@
+{
+  "name": "custom snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "elixir"
+        ],
+        "path": "./prag_live_view_snippets.json"
+      }
+    ]
+  }
+}

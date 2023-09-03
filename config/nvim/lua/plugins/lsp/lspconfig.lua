@@ -72,7 +72,7 @@ return {
       -- enable autocompletions
       local capabilities = cmp_nvim_lsp.default_capabilities()
 
-      local servers = { 'html', 'elixirls', 'pyright', 'tsserver', 'cssls', 'tailwindcss', 'svelte', 'prismals'}
+      local servers = { 'html', 'pyright', 'tsserver', 'cssls', 'tailwindcss', 'svelte', 'prismals'}
 
       -- most servers just need a simple setup
       for _, lsp in ipairs(servers) do
@@ -80,6 +80,16 @@ return {
           capabilities = capabilities
         }
       end
+
+      lspconfig.elixirls.setup {
+        cmd = { "elixir-ls" },
+        capabilities = capabilities,
+        settings = {
+          dialyzerEnabled = false,
+          fetchDeps = false,
+        }
+
+      }
 
       -- configure individual LSP modules with more options
       lspconfig.lua_ls.setup {
