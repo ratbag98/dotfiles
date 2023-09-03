@@ -6,4 +6,5 @@ tmux
 config/tmux/plugins/
 config/node_modules/
 config/fish
+config/github-copilot/
 .cfg
