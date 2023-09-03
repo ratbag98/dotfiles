@@ -19,7 +19,6 @@ return {
     -- load vscode-style snippets from plugins (eg friendly-snippets)
     require('luasnip.loaders.from_vscode').lazy_load()
 
-
     cmp.setup {
       completion = {
         complete_opt = "menu,menuone,preview,noselect"
