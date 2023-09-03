@@ -3,7 +3,7 @@ return {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
-    after = "catppuccin",
+    priority=100, -- less than colorscheme plugin
     config = function()
         require("bufferline").setup {
             highlights = require("catppuccin.groups.integrations.bufferline").get(),
