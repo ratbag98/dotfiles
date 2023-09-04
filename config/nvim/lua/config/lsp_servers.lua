@@ -4,7 +4,7 @@
 local buf = vim.lsp.buf                        -- for conciseness
 local telescope = require('telescope.builtin') -- for conciseness
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   -- define a key in NORMAL mode
   local nmap = function(keys, func, desc)
     if desc then
@@ -40,6 +40,14 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+
+  -- Create auto commands to automatically run format on save
+  if client.resolved_capabilities.document_formatting then
+    vim.api.nvim_command [[augroup Format]]
+    vim.api.nvim_command [[autocmd! * <buffer>]]
+    vim.api.nvim_command [[autocmd BufWritePost <buffer> lua vim.lsp.buf.format()]]
+    vim.api.nvim_command [[augroup END]]
+  end
 end
 
 -- enable autocompletions
@@ -47,7 +55,7 @@ local cmp_nvim_lsp = require('cmp_nvim_lsp')
 local lspconfig = require('lspconfig')
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
-local servers = { 'html', 'pyright', 'tsserver', 'cssls', 'tailwindcss', 'svelte', 'prismals' }
+local servers = { 'pyright', 'tsserver', 'cssls', 'tailwindcss', 'svelte', 'prismals' }
 
 -- most servers just need a simple setup
 for _, lsp in ipairs(servers) do
@@ -56,6 +64,12 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
   }
 end
+
+lspconfig.html.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "html", "heex" }
+}
 
 lspconfig.elixirls.setup {
   cmd = { "elixir-ls" },
