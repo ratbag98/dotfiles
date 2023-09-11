@@ -2,7 +2,6 @@
 .DS_Store
 config/iterm2
 config/gh
-tmux
 config/tmux/plugins/
 config/node_modules/
 config/fish
