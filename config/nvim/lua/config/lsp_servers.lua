@@ -42,12 +42,12 @@ local on_attach = function(client, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 
   -- Create auto commands to automatically run format on save
-  if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePost <buffer> lua vim.lsp.buf.format()]]
-    vim.api.nvim_command [[augroup END]]
-  end
+  -- if client.resolved_capabilities.document_formatting then
+  --   vim.api.nvim_command [[augroup Format]]
+  --   vim.api.nvim_command [[autocmd! * <buffer>]]
+  --   vim.api.nvim_command [[autocmd BufWritePost <buffer> lua vim.lsp.buf.format()]]
+  --   vim.api.nvim_command [[augroup END]]
+  -- end
 end
 
 -- enable autocompletions
@@ -55,7 +55,7 @@ local cmp_nvim_lsp = require('cmp_nvim_lsp')
 local lspconfig = require('lspconfig')
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
-local servers = { 'pyright', 'tsserver', 'cssls', 'tailwindcss', 'svelte', 'prismals' }
+local servers = { 'pyright', 'tsserver', 'cssls', 'svelte', 'prismals' }
 
 -- most servers just need a simple setup
 for _, lsp in ipairs(servers) do
@@ -97,6 +97,27 @@ lspconfig.graphql.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
+
+lspconfig.tailwindcss.setup({
+  capabilities = capabilities,
+  filetypes = { "html", "elixir", "eelixir", "heex" },
+  init_options = {
+    userLanguages = {
+      elixir = "html-eex",
+      eelixir = "html-eex",
+      heex = "html-eex",
+    },
+  },
+  settings = {
+    tailwindCSS = {
+      experimental = {
+        classRegex = {
+          'class[:]\\s*"([^"]*)"',
+        },
+      },
+    },
+  },
+})
 
 lspconfig.emmet_ls.setup {
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },

@@ -4,6 +4,8 @@ return {
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+
+  -- create a session file, suitable for tmux resurrection
   'tpope/vim-obsession',
 
   -- Detect tabstop and shiftwidth automatically
