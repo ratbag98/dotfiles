@@ -12,8 +12,9 @@ return {
   'tpope/vim-sleuth',
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',   opts = {} },
 
   { 'mbbill/undotree' },
+  { "stevearc/dressing.nvim", event = "VeryLazy" }
 }
 -- vim: ts=2 sts=2 sw=2 et
