@@ -13,7 +13,119 @@ return {
       { "folke/neodev.nvim",                   opts = {} },
       { 'simrat39/rust-tools.nvim' },
     },
+    keys = {
+      { '<leader>rn', vim.lsp.buf.rename,                                         desc = '[R]e[n]ame' },
+      { '<leader>ca', vim.lsp.buf.code_action,                                    desc = '[C]ode [A]ction' },
+      { 'gd',         vim.lsp.buf.definition,                                     desc = '[G]oto [D]efinition' },
+      { 'gr',         require('telescope.builtin').lsp_references,                desc = '[G]oto [R]eferences' },
+      { 'gI',         vim.lsp.buf.implementation,                                 desc = '[G]oto [I]mplementation' },
+      { '<leader>D',  vim.lsp.buf.type_definition,                                desc = 'Type [D]efinition' },
+      { '<leader>ds', require('telescope.builtin').lsp_document_symbols,          desc = '[D]ocument [S]ymbols' },
+      { '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, desc = '[W]orkspace [S]ymbols' },
+
+      -- See `:help K` for why this keymap
+      { 'K',          vim.lsp.buf.hover,                                          desc = 'Hover Documentation' },
+      { '<C-k>',      vim.lsp.buf.signature_help,                                 desc = 'Signature Documentation' },
+
+      -- Lesser used LSP functionality
+      { 'gD',         vim.lsp.buf.declaration,                                    desc = '[G]oto [D]eclaration' },
+      { '<leader>wa', vim.lsp.buf.add_workspace_folder,                           desc = '[W]orkspace [A]dd Folder' },
+      { '<leader>wr', vim.lsp.buf.remove_workspace_folder,                        desc = '[W]orkspace [R]emove Folder' },
+      {
+        '<leader>wl',
+        function()
+          print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end,
+        desc = '[W]orkspace [L]ist Folders'
+      }
+
+
+    },
     config = function()
+      -- this snippet enables auto-completion
+      local lspconfig = require('lspconfig')
+      local lspCapabilities = vim.lsp.protocol.make_client_capabilities()
+      lspCapabilities.textDocument.completion.completionItem.snippetSupport = true
+
+
+      local servers = { 'taplo', 'pyright', 'tsserver', 'cssls', 'svelte', 'prismals' }
+
+      for _, lsp in ipairs(servers) do
+        lspconfig[lsp].setup {
+          capabilities = lspCapabilities
+        }
+      end
+
+      -- ruff uses an LSP proxy, therefore it needs to be enabled as if it
+      -- were a LSP. In practice, ruff only provides linter-like diagnostics
+      -- and some code actions, and is not a full LSP yet.
+      lspconfig.ruff_lsp.setup({
+        -- organize imports disabled, since we are already using `isort` for that
+        -- alternative, this can be enabled to make `organize imports`
+        -- available as code action
+        settings = {
+          organizeImports = false,
+        },
+        -- disable ruff as hover provider to avoid conflicts with pyright
+        on_attach = function(client) client.server_capabilities.hoverProvider = false end,
+      })
+
+
+      lspconfig.html.setup {
+        capabilities = lspCapabilities,
+        filetypes = { "html", "heex" }
+      }
+
+      lspconfig.elixirls.setup {
+        cmd = { "elixir-ls" },
+        capabilities = lspCapabilities,
+        settings = {
+          dialyzerEnabled = false,
+          fetchDeps = false,
+        }
+
+      }
+
+      -- configure individual LSP modules with more options
+      lspconfig.lua_ls.setup {
+        capabilities = lspCapabilities,
+        Lua = {
+          workspace = { checkThirdParty = false },
+          telemetry = { enable = false },
+        }
+      }
+
+      lspconfig.graphql.setup {
+        filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+        capabilities = lspCapabilities,
+      }
+
+      lspconfig.tailwindcss.setup({
+        capabilities = lspCapabilities,
+        filetypes = { "html", "elixir", "eelixir", "heex" },
+        init_options = {
+          userLanguages = {
+            elixir = "html-eex",
+            eelixir = "html-eex",
+            heex = "html-eex",
+          },
+        },
+        settings = {
+          tailwindCSS = {
+            experimental = {
+              classRegex = {
+                'class[:]\\s*"([^"]*)"',
+              },
+            },
+          },
+        },
+      })
+
+      lspconfig.emmet_ls.setup {
+        filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+        capabilities = lspCapabilities,
+      }
+
       -- must be loaded before lspconfig
       require('neodev').setup({
         library = { plugins = { "neotest" }, types = true },
@@ -25,68 +137,6 @@ return {
         },
       }
       require('rust-tools').setup {}
-
-      local format_is_enabled = true
-      vim.api.nvim_create_user_command('KickstartFormatToggle', function()
-        format_is_enabled = not format_is_enabled
-        print('Setting autoformatting to: ' .. tostring(format_is_enabled))
-      end, {})
-
-      -- Create an augroup that is used for managing our formatting autocmds.
-      --      We need one augroup per client to make sure that multiple clients
-      --      can attach to the same buffer without interfering with each other.
-      local _augroups = {}
-      local get_augroup = function(client)
-        if not _augroups[client.id] then
-          local group_name = 'kickstart-lsp-format-' .. client.name
-          local id = vim.api.nvim_create_augroup(group_name, { clear = true })
-          _augroups[client.id] = id
-        end
-
-        return _augroups[client.id]
-      end
-
-      -- Whenever an LSP attaches to a buffer, we will run this function.
-      -- See `:help LspAttach` for more information about this autocmd event.
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('kickstart-lsp-attach-format', { clear = true }),
-        -- This is where we attach the autoformatting for reasonable clients
-        callback = function(args)
-          local client_id = args.data.client_id
-          local client = vim.lsp.get_client_by_id(client_id)
-          local bufnr = args.buf
-
-          -- Only attach to clients that support document formatting
-          if not client.server_capabilities.documentFormattingProvider then
-            return
-          end
-
-          -- Tsserver usually works poorly. Sorry you work with bad languages
-          -- You can remove this line if you know what you're doing :)
-          if client.name == 'tsserver' then
-            return
-          end
-
-          -- Create an autocmd that will run *before* we save the buffer.
-          --  Run the formatting command for the LSP that has just attached.
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            group = get_augroup(client),
-            buffer = bufnr,
-            callback = function()
-              if not format_is_enabled then
-                return
-              end
-
-              vim.lsp.buf.format {
-                async = false,
-                filter = function(c)
-                  return c.id == client.id
-                end,
-              }
-            end,
-          })
-        end,
-      })
     end
   }
 }

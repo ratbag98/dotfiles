@@ -18,7 +18,7 @@ return {
         'lua',
         'markdown',
         'markdown_inline',
-        'python',
+        'python', 'toml', 'rst', 'ninja',
         'regex',
         'rust',
         'sql',
@@ -38,7 +38,7 @@ return {
       -- List of parsers to ignore installing
       ignore_install = { 'markdown' },
 
-      highlight = { 
+      highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
       },
