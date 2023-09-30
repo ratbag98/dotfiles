@@ -1327,6 +1327,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>0F3F60DB-7690-4EC9-8592-B5DB610F922D</string>
+	<key>DimInactiveSplitPanes</key>
+	<false/>
 	<key>EnableDivisionView</key>
 	<true/>
 	<key>EnableProxyIcon</key>
@@ -2617,7 +2619,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCodeNFM-Reg 14</string>
+			<string>FiraCodeNFM-Reg 16</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>

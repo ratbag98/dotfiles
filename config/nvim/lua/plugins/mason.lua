@@ -27,7 +27,7 @@ return {
       'graphql',
       'emmet_ls',
       'prismals',
-      'elixirls',
+      -- 'elixirls',
       'rust_analyzer',
 
     },

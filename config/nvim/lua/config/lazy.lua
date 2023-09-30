@@ -22,7 +22,7 @@ require('lazy').setup({
     lazy = false,
     version = false,
   },
-  install = { colorscheme = { 'catppucin', 'tokyonight', 'habamax' } },
+  install = { colorscheme = { 'tokyonight', 'catppucin' } },
   checker = { enabled = true, notify = false },
   performance = {
     rtp = {
