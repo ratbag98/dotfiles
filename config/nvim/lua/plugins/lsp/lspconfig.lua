@@ -76,15 +76,15 @@ return {
         filetypes = { "html", "heex" }
       }
 
-      -- lspconfig.elixirls.setup {
-      --   cmd = { "elixir-ls" },
-      --   capabilities = lspCapabilities,
-      --   settings = {
-      --     dialyzerEnabled = false,
-      --     fetchDeps = false,
-      --   }
-      --
-      -- }
+      lspconfig.elixirls.setup {
+        cmd = { "elixir-ls" },
+        capabilities = lspCapabilities,
+        settings = {
+          dialyzerEnabled = false,
+          fetchDeps = false,
+        }
+
+      }
 
       -- configure individual LSP modules with more options
       lspconfig.lua_ls.setup {

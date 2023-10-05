@@ -3,33 +3,54 @@ return {
   dependencies = {
     {
       "williamboman/mason.nvim",
-      opts = true
+      opts = true,
     },
 
     { "williamboman/mason-lspconfig.nvim", opts = true },
   },
-  opts = {
-    ensure_installed = {
-      "pyright",  -- LSP for python
-      "ruff-lsp", -- linter for python (includes flake8, pep8, etc.)
-      "mypy",
-      "debugpy",  -- debugger
-      'taplo',
-      "black",    -- formatter
-      "isort",    -- organize imports
-      "taplo",    -- LSP for toml (for pyproject.toml files)
-      'tsserver',
-      'html',
-      'cssls',
-      'tailwindcss',
-      'svelte',
-      'lua_ls',
-      'graphql',
-      'emmet_ls',
-      'prismals',
-      -- 'elixirls',
-      'rust_analyzer',
+  config = function()
+    local mason = require("mason")
+    local mason_lspconfig = require("mason-lspconfig")
+    local mason_tool_installer = require("mason-tool-installer")
 
-    },
-  },
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
+
+    mason_lspconfig.setup({
+      ensure_installed = {
+        "pyright", -- LSP for python
+        "taplo",
+        "tsserver",
+        "html",
+        "cssls",
+        "tailwindcss",
+        "svelte",
+        "lua_ls",
+        "graphql",
+        "emmet_ls",
+        "prismals",
+        "elixirls",
+        "rust_analyzer",
+      },
+    })
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "prettier",
+        "ruff-lsp", -- linter for python (includes flake8, pep8, etc.)
+        "stylua",
+        "isort",
+        "black",
+        "pylint",
+        "mypy",
+        "debugpy", -- debugger
+      },
+    })
+  end,
 }
