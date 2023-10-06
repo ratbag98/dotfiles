@@ -9,7 +9,7 @@
 	<key>AutoCommandHistory</key>
 	<true/>
 	<key>CheckTestRelease</key>
-	<true/>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>catppuccin-frappe</key>

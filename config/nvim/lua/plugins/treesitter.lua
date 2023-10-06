@@ -1,32 +1,40 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
+  "nvim-treesitter/nvim-treesitter",
   dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects' },
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
+  build = ":TSUpdate",
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
-    require('nvim-treesitter.configs').setup {
+    require("nvim-treesitter.configs").setup({
       -- Add languages to be installed here that you want installed for treesitter
       ensure_installed = {
-        'bash',
-        'c',
-        'cpp',
-        'comment',
-        'elixir', 'heex', 'eex',
-        'html',
-        'javascript',
-        'jsdoc',
-        'json',
-        'lua',
-        'markdown',
-        'markdown_inline',
-        'python', 'toml', 'rst', 'ninja',
-        'regex',
-        'rust',
-        'sql',
-        'tsx',
-        'typescript',
-        'vimdoc',
-        'vim',
-        'yaml',
+        "bash",
+        "c",
+        "cpp",
+        "comment",
+        "elixir",
+        "heex",
+        "eex",
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "toml",
+        "rst",
+        "ninja",
+        "regex",
+        "rust",
+        "sql",
+        "tsx",
+        "typescript",
+        "vimdoc",
+        "vim",
+        "yaml",
       },
 
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -36,7 +44,7 @@ return {
       sync_install = false,
 
       -- List of parsers to ignore installing
-      ignore_install = { 'markdown' },
+      -- ignore_install = { "markdown" },
 
       highlight = {
         enable = true,
@@ -46,56 +54,12 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = '<c-space>',
-          node_incremental = '<c-space>',
-          scope_incremental = '<c-s>',
-          node_decremental = '<M-space>',
+          init_selection = "<c-space>",
+          node_incremental = "<c-space>",
+          scope_incremental = false,
+          node_decremental = "<M-space>",
         },
       },
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-          keymaps = {
-            -- You can use the capture groups defined in textobjects.scm
-            ['aa'] = '@parameter.outer',
-            ['ia'] = '@parameter.inner',
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-            ['ac'] = '@class.outer',
-            ['ic'] = '@class.inner',
-          },
-        },
-        move = {
-          enable = true,
-          set_jumps = true, -- whether to set jumps in the jumplist
-          goto_next_start = {
-            [']m'] = '@function.outer',
-            [']]'] = '@class.outer',
-          },
-          goto_next_end = {
-            [']M'] = '@function.outer',
-            [']['] = '@class.outer',
-          },
-          goto_previous_start = {
-            ['[m'] = '@function.outer',
-            ['[['] = '@class.outer',
-          },
-          goto_previous_end = {
-            ['[M'] = '@function.outer',
-            ['[]'] = '@class.outer',
-          },
-        },
-        swap = {
-          enable = true,
-          swap_next = {
-            ['<leader>a'] = '@parameter.inner',
-          },
-          swap_previous = {
-            ['<leader>A'] = '@parameter.inner',
-          },
-        },
-      },
-    }
-  end
+    })
+  end,
 }
