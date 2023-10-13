@@ -1,5 +1,5 @@
 -- Formatting client: conform.nvim
--- - configured to use black & isort in python
+-- - configured to use black in python
 -- - use the taplo-LSP for formatting in toml
 -- - Formatting is triggered via `<leader>f`, but also automatically on save
 return {
@@ -17,9 +17,7 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
-        -- first use isort and then black
-        -- get black to stop creating huge lines
-        python = { "isort", "black" },
+        python = { "black" },
         lua = { "stylua" },
       },
       -- enable format-on-save

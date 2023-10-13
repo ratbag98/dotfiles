@@ -45,7 +45,6 @@ return {
         "prettier",
         "ruff-lsp", -- linter for python (includes flake8, pep8, etc.)
         "stylua",
-        "isort",
         "black",
         "debugpy", -- debugger
       },

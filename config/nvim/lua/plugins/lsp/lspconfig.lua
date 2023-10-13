@@ -72,11 +72,8 @@ return {
       -- were a LSP. In practice, ruff only provides linter-like diagnostics
       -- and some code actions, and is not a full LSP yet.
       lspconfig.ruff_lsp.setup({
-        -- organize imports disabled, since we are already using `isort` for that
-        -- alternative, this can be enabled to make `organize imports`
-        -- available as code action
         settings = {
-          organizeImports = false,
+          organizeImports = true,
         },
         -- disable ruff as hover provider to avoid conflicts with pyright
         on_attach = function(client)
