@@ -18,6 +18,7 @@ return {
     require("conform").setup({
       formatters_by_ft = {
         -- first use isort and then black
+        -- get black to stop creating huge lines
         python = { "isort", "black" },
         lua = { "stylua" },
       },

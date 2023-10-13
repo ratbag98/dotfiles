@@ -6,6 +6,9 @@
 -- just that buffer. (As an alternative to using an autocmd, you can also put those
 -- configurations into a file `/after/ftplugin/{filetype}.lua` in your
 -- nvim-directory.)
+
+vim.g.python3_host_prog = vim.fn.expand("$HOME/venvs/neovim/bin/python3")
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "python", -- filetype for which to run the autocmd
   callback = function()

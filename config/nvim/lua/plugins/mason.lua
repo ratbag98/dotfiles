@@ -48,7 +48,6 @@ return {
         "isort",
         "black",
         "pylint",
-        "mypy",
         "debugpy", -- debugger
       },
     })
