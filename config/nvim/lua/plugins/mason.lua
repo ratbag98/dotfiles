@@ -47,7 +47,6 @@ return {
         "stylua",
         "isort",
         "black",
-        "pylint",
         "debugpy", -- debugger
       },
     })
