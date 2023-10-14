@@ -86,15 +86,6 @@ return {
         filetypes = { "html", "heex" },
       })
 
-      lspconfig.elixirls.setup({
-        cmd = { "elixir-ls" },
-        capabilities = lspCapabilities,
-        settings = {
-          dialyzerEnabled = false,
-          fetchDeps = false,
-        },
-      })
-
       -- configure individual LSP modules with more options
       lspconfig.lua_ls.setup({
         capabilities = lspCapabilities,
@@ -111,7 +102,7 @@ return {
 
       lspconfig.tailwindcss.setup({
         capabilities = lspCapabilities,
-        filetypes = { "html", "elixir", "eelixir", "heex" },
+        filetypes = { "html", "eelixir", "heex" },
         init_options = {
           userLanguages = {
             elixir = "html-eex",

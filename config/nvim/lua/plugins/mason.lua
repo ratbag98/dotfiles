@@ -36,7 +36,6 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
-        "elixirls",
         "rust_analyzer",
       },
     })
