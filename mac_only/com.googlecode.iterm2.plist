@@ -4332,6 +4332,8 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>RestoreWindowsToSameSpaces</key>
 	<true/>
 	<key>SoundForEsc</key>
