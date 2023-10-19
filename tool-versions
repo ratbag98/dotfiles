@@ -3,6 +3,5 @@ erlang 26.0.2
 nodejs 20.5.1
 rebar 3.19.0
 ruby 3.1.2
-perl 5.37.4
 golang 1.21.0
 python 3.11.6

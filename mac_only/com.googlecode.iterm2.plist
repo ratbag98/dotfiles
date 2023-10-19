@@ -3513,15 +3513,15 @@
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>0.25</real>
+				<real>0.059371471405029297</real>
 				<key>Blue Component</key>
-				<real>0.96078431372549022</real>
+				<real>0.96078431606292725</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.792156862745098</real>
+				<real>0.9493356360920302</real>
 				<key>Red Component</key>
-				<real>0.75294117647058822</real>
+				<real>0.75294119119644176</real>
 			</dict>
 			<key>Cursor Guide Color (Dark)</key>
 			<dict>
@@ -4277,6 +4277,8 @@
 			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
+			<key>Use Cursor Guide</key>
+			<true/>
 			<key>Use Cursor Guide (Dark)</key>
 			<true/>
 			<key>Use Italic Font</key>
@@ -4355,5 +4357,9 @@
 	<true/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>

@@ -1,19 +1,17 @@
-mas "com.kirsteins.chords-and-scales-mac", id: 1435473426
-mas "Craft", id: 1487937127
 mas "DevUtils", id: 1533756032
-mas "Drafts", id: 1435957248
 mas "FileBot", id: 905384638
 mas "Final Cut Pro", id: 424389933
 mas "GoPro Player", id: 1460836908
 mas "Keynote", id: 409183694
-mas "Kindle", id: 405399194
-mas "Logic Pro", id: 634148309
+mas "Kindle", id: 302584613
+mas "Kindle Classic", id: 405399194
 mas "Mactracker", id: 430255202
 mas "Magnet", id: 441258766
 mas "Metadatics", id: 554883654
 mas "MIDI Loupe", id: 507075182
 mas "MindNode", id: 1289197285
 mas "Motion", id: 434290957
+mas "NordVPN", id: 905953485
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "PCalc", id: 403504866
@@ -30,17 +28,11 @@ mas "WiFi Explorer", id: 494803304
 mas "Wipr", id: 1320666476
 mas "Yubico Authenticator", id: 1497506650
 mas "ZOA", id: 1581881354
-tap "adoptopenjdk/openjdk"
-tap "beeftornado/rmtree"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
-tap "koekeishiya/formulae"
 tap "mas-cli/tap"
-tap "mistertea/et"
 tap "neovim/neovim"
-tap "universal-ctags/universal-ctags"
-tap "unused-code/formulae"
 brew "agg"
 brew "xz"
 brew "autoconf"
@@ -92,8 +84,6 @@ brew "librsvg"
 brew "libtool"
 brew "graphviz"
 brew "grep"
-brew "sqlite"
-brew "httpie"
 brew "shared-mime-info"
 brew "jq"
 brew "lazygit"
@@ -122,6 +112,7 @@ brew "postgresql@15", restart_service: true
 brew "procs"
 brew "pth"
 brew "pwgen"
+brew "sqlite"
 brew "qrencode"
 brew "recode"
 brew "rename"
@@ -146,7 +137,6 @@ brew "zbar"
 brew "zlib"
 brew "zoxide"
 cask "basictex"
-cask "fig"
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
