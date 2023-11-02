@@ -12,11 +12,11 @@ return {
           width_preview = 30,
         },
       })
-      require("mini.animate").setup({
-        scroll = {
-          enable = false,
-        },
-      })
+      -- require("mini.animate").setup({
+      --   scroll = {
+      --     enable = false,
+      --   },
+      -- })
     end,
   },
 }
