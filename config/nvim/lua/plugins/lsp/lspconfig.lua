@@ -11,7 +11,20 @@ return {
       -- Useful status updates for LSP
       { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
       { "folke/neodev.nvim", opts = {} },
-      { "simrat39/rust-tools.nvim" },
+      {
+        "simrat39/rust-tools.nvim",
+        ft = "rust",
+        -- optional = true,
+        opts = {
+          tools = {
+            inlay_hints = {
+              -- nvim >= 0.10 has native inlay hint support,
+              -- so we don't need the rust-tools specific implementation any longer
+              auto = not vim.fn.has("nvim-0.10"),
+            },
+          },
+        },
+      },
     },
     keys = {
       { "<leader>rn", vim.lsp.buf.rename, desc = "[R]e[n]ame" },
@@ -136,7 +149,31 @@ return {
           blend = 0,
         },
       })
-      require("rust-tools").setup({})
+
+      -- Rust is weird
+      local rt = require("rust-tools")
+      local install_root_dir = vim.fn.stdpath("data") .. "/mason"
+      local extension_path = install_root_dir .. "/packages/codelldb/extension/"
+      local codelldb_path = extension_path .. "adapter/codelldb"
+      local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+
+      rt.setup({
+        dap = {
+          adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+        },
+        server = {
+          capabilities = lspCapabilities,
+          on_attach = function(_, bufnr)
+            vim.keymap.set("n", "<Leader>k", rt.hover_actions.hover_actions, { buffer = bufnr })
+            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+          end,
+        },
+        tools = {
+          hover_actions = {
+            auto_focus = true,
+          },
+        },
+      })
     end,
   },
 }

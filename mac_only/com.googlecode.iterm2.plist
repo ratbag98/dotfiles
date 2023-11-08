@@ -3471,6 +3471,8 @@
 			<integer>80</integer>
 			<key>Command</key>
 			<string></string>
+			<key>Cursor Boost</key>
+			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -3513,15 +3515,15 @@
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>0.059371471405029297</real>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.96078431606292725</real>
+				<real>0.20000000000000001</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.9493356360920302</real>
+				<real>0.20000000000000001</real>
 				<key>Red Component</key>
-				<real>0.75294119119644176</real>
+				<real>0.20000000000000001</real>
 			</dict>
 			<key>Cursor Guide Color (Dark)</key>
 			<dict>
