@@ -11,20 +11,7 @@ return {
       -- Useful status updates for LSP
       { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
       { "folke/neodev.nvim", opts = {} },
-      {
-        "simrat39/rust-tools.nvim",
-        ft = "rust",
-        -- optional = true,
-        opts = {
-          tools = {
-            inlay_hints = {
-              -- nvim >= 0.10 has native inlay hint support,
-              -- so we don't need the rust-tools specific implementation any longer
-              auto = not vim.fn.has("nvim-0.10"),
-            },
-          },
-        },
-      },
+      { "simrat39/rust-tools.nvim", ft = "rust" },
     },
     keys = {
       { "<leader>rn", vim.lsp.buf.rename, desc = "[R]e[n]ame" },
@@ -161,9 +148,19 @@ return {
       local install_root_dir = vim.fn.stdpath("data") .. "/mason"
       local extension_path = install_root_dir .. "/packages/codelldb/extension/"
       local codelldb_path = extension_path .. "adapter/codelldb"
-      local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
+      local liblldb_path = extension_path .. "lldb/lib/liblldb"
+      local this_os = vim.loop.os_uname().sysname
 
-      rt.setup({
+      -- The path in windows is different
+      if this_os:find("Windows") then
+        codelldb_path = extension_path .. "adapter\\codelldb.exe"
+        liblldb_path = extension_path .. "lldb\\bin\\liblldb.dll"
+      else
+        -- The liblldb extension is .so for linux and .dylib for macOS
+        liblldb_path = liblldb_path .. (this_os == "Linux" and ".so" or ".dylib")
+      end
+
+      local opts = {
         dap = {
           adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
         },
@@ -174,12 +171,20 @@ return {
             vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
           end,
         },
+
         tools = {
           hover_actions = {
             auto_focus = true,
           },
+          inlay_hints = {
+            -- nvim >= 0.10 has native inlay hint support,
+            -- so we don't need the rust-tools specific implementation any longer
+            auto = not vim.fn.has("nvim-0.10"),
+          },
         },
-      })
+      }
+
+      rt.setup(opts)
     end,
   },
 }

@@ -8,7 +8,7 @@ return {
     "hrsh7th/cmp-path", -- source for file system paths
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    -- "rafamadriz/friendly-snippets", -- useful snippets
+    "rafamadriz/friendly-snippets", -- useful snippets
     "onsails/lspkind.nvim", -- vs-code like pictograms
     "hrsh7th/cmp-nvim-lsp-signature-help", -- highlight parameter
   },
