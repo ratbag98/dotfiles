@@ -150,6 +150,12 @@ return {
         },
       })
 
+      local _border = "rounded"
+
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        border = _border,
+      })
+
       -- Rust is weird
       local rt = require("rust-tools")
       local install_root_dir = vim.fn.stdpath("data") .. "/mason"
