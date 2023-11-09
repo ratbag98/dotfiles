@@ -51,5 +51,10 @@ vim.wo.foldlevel = 2
 vim.cmd([[colorscheme tokyonight]])
 
 vim.diagnostic.config({
-  float = { border = "rounded" },
+  virtual_text = false,
+  float = {
+    header = false,
+    border = "rounded",
+    focusable = true,
+  },
 })

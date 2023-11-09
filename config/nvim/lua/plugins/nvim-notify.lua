@@ -20,8 +20,13 @@ return {
         return math.floor(vim.o.columns * 0.75)
       end,
     },
-    init = function()
-      vim.notify = require("notify")
+    -- init = function()
+    --   vim.notify = require("notify")
+    -- end,
+    config = function()
+      require("notify").setup({
+        render = "wrapped-compact",
+      })
     end,
-  }
+  },
 }
