@@ -36,7 +36,7 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = "menuone,noselect,preview,noinsert"
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
@@ -47,8 +47,6 @@ vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 vim.wo.foldnestmax = 10
 vim.wo.foldenable = false
 vim.wo.foldlevel = 2
-
-vim.cmd([[colorscheme tokyonight]])
 
 vim.diagnostic.config({
   virtual_text = false,

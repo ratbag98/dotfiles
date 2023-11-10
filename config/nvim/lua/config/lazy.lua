@@ -16,18 +16,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { import = "plugins" },
-  { import = "plugins.lsp" },
+  spec = {
+    { import = "plugins" },
+    { import = "plugins.lsp" },
+  },
   defaults = {
     lazy = false,
     version = false,
   },
   install = { colorscheme = { "tokyonight" } },
-  checker = { enabled = false, notify = false },
-  custom_keys = {
-    ["<localleader>l"] = false,
-    ["<localleader>t"] = false,
-  },
+  checker = { enabled = true, notify = true },
   cache = {
     enabled = true,
   },
@@ -43,5 +41,9 @@ require("lazy").setup({
         "zipPlugin",
       },
     },
+  },
+  ui = {
+    -- size = { width = 0.1, height = 0.1 },
+    border = "rounded",
   },
 })

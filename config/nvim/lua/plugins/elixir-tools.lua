@@ -3,15 +3,12 @@ return {
   version = "*",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    local elixir = require("elixir")
-    local elixirls = require("elixir.elixirls")
-
-    elixir.setup({
+    require("elixir").setup({
       nextls = { enable = true },
       credo = { enable = false }, -- use project version instead
       elixirls = {
         enable = true,
-        settings = elixirls.settings({
+        settings = require("elixir.elixirls").settings({
           dialyzerEnabled = true,
           enableTestLenses = false,
         }),

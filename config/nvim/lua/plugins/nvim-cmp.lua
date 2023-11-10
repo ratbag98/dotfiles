@@ -2,7 +2,7 @@
 
 return {
   "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
@@ -14,20 +14,15 @@ return {
   },
   config = function()
     local cmp = require("cmp")
-    local luasnip = require("luasnip")
-    local lspkind = require("lspkind")
 
     -- load vscode-style snippets from plugins (eg friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
     require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/" })
 
     cmp.setup({
-      completion = {
-        complete_opt = "menu,menuone,preview,noselect",
-      },
       snippet = {
         expand = function(args)
-          luasnip.lsp_expand(args.body)
+          require("luasnip").lsp_expand(args.body)
         end,
       },
       window = {
@@ -47,8 +42,8 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
-          elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
+          elseif require("luasnip").expand_or_locally_jumpable() then
+            require("luasnip").expand_or_jump()
           else
             fallback()
           end
@@ -56,8 +51,8 @@ return {
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
-          elseif luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
+          elseif require("luasnip").locally_jumpable(-1) then
+            require("luasnip").jump(-1)
           else
             fallback()
           end
@@ -71,7 +66,7 @@ return {
         { name = "path" }, -- file system paths
       },
       formatting = {
-        format = lspkind.cmp_format({
+        format = require("lspkind").cmp_format({
           maxwidth = 50,
           ellipsis_char = "...",
         }),
