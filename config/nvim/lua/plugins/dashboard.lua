@@ -1,9 +1,8 @@
 return {
-  { "goolord/alpha-nvim", enabled = false },
-  { "echasnovski/mini.starter", enabled = false },
   {
     "glepnir/dashboard-nvim",
     event = "VimEnter",
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
     opts = function()
       local logo = [[
 ██████╗  ██████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
@@ -25,7 +24,6 @@ return {
             { action = "ene | startinsert", desc = " New file", icon = " ", key = "n" },
             { action = "Telescope oldfiles", desc = " Recent files", icon = " ", key = "r" },
             { action = "Telescope live_grep", desc = " Find text", icon = " ", key = "g" },
-            { action = "e $MYVIMRC", desc = " Config", icon = " ", key = "c" },
             { action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
             { action = "qa", desc = " Quit", icon = " ", key = "q" },
           },

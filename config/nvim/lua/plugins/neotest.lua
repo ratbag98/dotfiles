@@ -7,15 +7,15 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
     "antoinemadec/FixCursorHold.nvim",
-    { 'nvim-neotest/neotest-python' },
+    { "nvim-neotest/neotest-python" },
   },
   config = function()
-    require('neotest').setup {
+    require("neotest").setup({
       adapters = {
         require("neotest-python")({
           dap = { justMyCode = false },
-        })
-      }
-    }
+        }),
+      },
+    })
   end,
 }
