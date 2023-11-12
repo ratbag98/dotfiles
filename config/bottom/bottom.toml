@@ -33,7 +33,7 @@
 #temperature_type = "c"
 #temperature_type = "kelvin"
 #temperature_type = "fahrenheit"
-#temperature_type = "celsius"
+temperature_type = "celsius"
 # The default time interval (in milliseconds).
 #default_time_value = "60s"
 # The time delta on each zoom in/out action (in milliseconds).
@@ -60,9 +60,9 @@
 # Show memory values in the processes widget as values by default
 #mem_as_value = false
 # Show tree mode by default in the processes widget.
-#tree = false
+tree = false
 # Shows an indicator in table widgets tracking where in the list you are.
-#show_table_scroll_position = false
+show_table_scroll_position = true
 # Show processes as their commands by default in the process widget.
 #process_command = false
 # Displays the network widget with binary prefixes.
