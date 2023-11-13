@@ -43,9 +43,15 @@ return {
       },
     },
     config = function()
+      -- must be loaded before lspconfig
+      require("neodev").setup({
+        library = { plugins = { "neotest" }, types = true },
+      })
+
       -- this snippet enables auto-completion
       local lspconfig = require("lspconfig")
-      local lspCapabilities = vim.lsp.protocol.make_client_capabilities()
+      -- local lspCapabilities = vim.lsp.protocol.make_client_capabilities()
+      local lspCapabilities = require("cmp_nvim_lsp").default_capabilities()
       lspCapabilities.textDocument.completion.completionItem.snippetSupport = true
 
       local servers = { "taplo", "tsserver", "cssls", "svelte", "prismals" }
@@ -125,11 +131,6 @@ return {
         capabilities = lspCapabilities,
       })
 
-      -- must be loaded before lspconfig
-      require("neodev").setup({
-        library = { plugins = { "neotest" }, types = true },
-      })
-
       require("fidget").setup({
         window = {
           blend = 0,
@@ -139,6 +140,9 @@ return {
       local _border = "rounded"
 
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        border = _border,
+      })
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, {
         border = _border,
       })
     end,
