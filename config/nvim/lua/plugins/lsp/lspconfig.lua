@@ -11,7 +11,6 @@ return {
       -- Useful status updates for LSP
       { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
       { "folke/neodev.nvim", opts = {} },
-      { "simrat39/rust-tools.nvim", ft = "rust" },
     },
     keys = {
       { "<leader>rn", vim.lsp.buf.rename, desc = "[R]e[n]ame" },
@@ -142,48 +141,6 @@ return {
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
         border = _border,
       })
-
-      -- Rust is weird
-      local install_root_dir = vim.fn.stdpath("data") .. "/mason"
-      local extension_path = install_root_dir .. "/packages/codelldb/extension/"
-      local codelldb_path = extension_path .. "adapter/codelldb"
-      local liblldb_path = extension_path .. "lldb/lib/liblldb"
-      local this_os = vim.loop.os_uname().sysname
-
-      -- The path in windows is different
-      if this_os:find("Windows") then
-        codelldb_path = extension_path .. "adapter\\codelldb.exe"
-        liblldb_path = extension_path .. "lldb\\bin\\liblldb.dll"
-      else
-        -- The liblldb extension is .so for linux and .dylib for macOS
-        liblldb_path = liblldb_path .. (this_os == "Linux" and ".so" or ".dylib")
-      end
-
-      local opts = {
-        dap = {
-          adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-        },
-        server = {
-          capabilities = lspCapabilities,
-          on_attach = function(_, bufnr)
-            vim.keymap.set("n", "<Leader>k", require("rust-tools").hover_actions.hover_actions, { buffer = bufnr })
-            vim.keymap.set(
-              "n",
-              "<Leader>a",
-              require("rust-tools").code_action_group.code_action_group,
-              { buffer = bufnr }
-            )
-          end,
-        },
-
-        tools = {
-          hover_actions = {
-            auto_focus = true,
-          },
-        },
-      }
-
-      require("rust-tools").setup(opts)
     end,
   },
 }

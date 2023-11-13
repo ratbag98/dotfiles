@@ -37,7 +37,6 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
-        "rust_analyzer",
       },
     })
     mason_tool_installer.setup({

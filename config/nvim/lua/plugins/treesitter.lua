@@ -28,7 +28,6 @@ return {
         "rst",
         "ninja",
         "regex",
-        "rust",
         "sql",
         "tsx",
         "typescript",

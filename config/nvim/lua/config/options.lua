@@ -68,3 +68,11 @@ for type, icon in pairs(signs) do
 end
 
 vim.cmd([[ let g:loaded_perl_provider = 0 ]])
+
+vim.g.rustaceanvim = {
+  tools = {
+    hover_actions = {
+      auto_focus = true,
+    },
+  },
+}
