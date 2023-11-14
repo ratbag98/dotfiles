@@ -74,6 +74,7 @@ vim.g.rustaceanvim = {
   tools = {
     hover_actions = {
       auto_focus = true,
+      replace_builtin_hover = true,
     },
   },
 }

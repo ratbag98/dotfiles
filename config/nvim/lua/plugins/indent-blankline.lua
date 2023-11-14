@@ -1,4 +1,5 @@
 -- vertical bars to show indentation, with spangly colours
+---@diagnostic disable-next-line: unused-local
 local highlight = {
   "RainbowRed",
   "RainbowYellow",

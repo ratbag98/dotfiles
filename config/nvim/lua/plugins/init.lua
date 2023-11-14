@@ -1,13 +1,6 @@
 -- only put simple plugin lines here
 -- more complex setup should be in a separate file per plugin
 return {
-  -- Git related plugins
-  "tpope/vim-fugitive",
-  "tpope/vim-rhubarb",
-
-  -- create a session file, suitable for tmux resurrection
-  "tpope/vim-obsession",
-
   -- Detect tabstop and shiftwidth automatically
   "tpope/vim-sleuth",
 
@@ -24,5 +17,6 @@ return {
 
   { "mbbill/undotree" },
   { "stevearc/dressing.nvim", event = "VeryLazy" },
+  { "chrisgrieser/nvim-puppeteer", lazy = false },
 }
 -- vim: ts=2 sts=2 sw=2 et

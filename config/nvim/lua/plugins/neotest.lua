@@ -2,14 +2,13 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 return {
   "nvim-neotest/neotest",
-  version = "*",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
     "antoinemadec/FixCursorHold.nvim",
     { "nvim-neotest/neotest-python" },
   },
   config = function()
+    ---@diagnostic disable-next-line: missing-fields
     require("neotest").setup({
       adapters = {
         require("neotest-python")({

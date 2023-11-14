@@ -3,13 +3,6 @@
 -- some plugins that help with python-specific editing operations
 
 return {
-  -- f-strings
-  -- - auto-convert strings to f-strings when typing `{}` in a string
-  -- - also auto-converts f-strings back to regular strings when removing `{}`
-  {
-    "chrisgrieser/nvim-puppeteer",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-  },
 
   -- better indentation behavior
   -- by default, vim has some weird indentation behavior in some edge cases,

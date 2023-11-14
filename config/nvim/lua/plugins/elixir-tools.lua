@@ -12,6 +12,7 @@ return {
           dialyzerEnabled = true,
           enableTestLenses = false,
         }),
+        ---@diagnostic disable-next-line: unused-local
         on_attach = function(client, bufnr)
           vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })
           vim.keymap.set("n", "<space>tp", ":ElixirToPipe<cr>", { buffer = true, noremap = true })
