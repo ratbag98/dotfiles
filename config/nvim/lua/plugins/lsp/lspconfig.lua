@@ -9,31 +9,19 @@ return {
       { "antosha417/nvim-lsp-file-operations", config = true },
 
       -- Useful status updates for LSP
-      { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+      {
+        "j-hui/fidget.nvim",
+        opts = { notification = { window = { winblend = 0 } } },
+      },
       { "folke/neodev.nvim", opts = {} },
     },
     keys = {
-      { "<leader>rn", vim.lsp.buf.rename, desc = "[R]e[n]ame" },
-      { "<leader>ca", vim.lsp.buf.code_action, desc = "[C]ode [A]ction" },
-      { "gd", vim.lsp.buf.definition, desc = "[G]oto [D]efinition" },
-      { "gr", require("telescope.builtin").lsp_references, desc = "[G]oto [R]eferences" },
-      { "gI", vim.lsp.buf.implementation, desc = "[G]oto [I]mplementation" },
-      { "<leader>D", vim.lsp.buf.type_definition, desc = "Type [D]efinition" },
-      { "<leader>ds", require("telescope.builtin").lsp_document_symbols, desc = "[D]ocument [S]ymbols" },
-      { "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, desc = "[W]orkspace [S]ymbols" },
-
-      -- See `:help K` for why this keymap
-      { "K", vim.lsp.buf.hover, desc = "Hover Documentation" },
       { "<C-k>", vim.lsp.buf.signature_help, desc = "Signature Documentation" },
-
-      -- Lesser used LSP functionality
-      { "gD", vim.lsp.buf.declaration, desc = "[G]oto [D]eclaration" },
+      { "<leader>D", vim.lsp.buf.type_definition, desc = "Type [D]efinition" },
+      { "<leader>ca", vim.lsp.buf.code_action, desc = "[C]ode [A]ction", mode = { "n", "v" } },
+      { "<leader>ds", require("telescope.builtin").lsp_document_symbols, desc = "[D]ocument [S]ymbols" },
+      { "<leader>rn", vim.lsp.buf.rename, desc = "[R]e[n]ame" },
       { "<leader>wa", vim.lsp.buf.add_workspace_folder, desc = "[W]orkspace [A]dd Folder" },
-      {
-        "<leader>wr",
-        vim.lsp.buf.remove_workspace_folder,
-        desc = "[W]orkspace [R]emove Folder",
-      },
       {
         "<leader>wl",
         function()
@@ -41,6 +29,13 @@ return {
         end,
         desc = "[W]orkspace [L]ist Folders",
       },
+      { "<leader>wr", vim.lsp.buf.remove_workspace_folder, desc = "[W]orkspace [R]emove Folder" },
+      { "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, desc = "[W]orkspace [S]ymbols" },
+      { "K", vim.lsp.buf.hover, desc = "Hover Documentation" },
+      { "gD", vim.lsp.buf.declaration, desc = "[G]oto [D]eclaration" },
+      { "gI", vim.lsp.buf.implementation, desc = "[G]oto [I]mplementation" },
+      { "gd", vim.lsp.buf.definition, desc = "[G]oto [D]efinition" },
+      { "gr", require("telescope.builtin").lsp_references, desc = "[G]oto [R]eferences" },
     },
     config = function()
       -- must be loaded before lspconfig
@@ -50,7 +45,6 @@ return {
 
       -- this snippet enables auto-completion
       local lspconfig = require("lspconfig")
-      -- local lspCapabilities = vim.lsp.protocol.make_client_capabilities()
       local lspCapabilities = require("cmp_nvim_lsp").default_capabilities()
       lspCapabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -129,12 +123,6 @@ return {
       lspconfig.emmet_ls.setup({
         filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
         capabilities = lspCapabilities,
-      })
-
-      require("fidget").setup({
-        window = {
-          blend = 0,
-        },
       })
 
       local _border = "rounded"
