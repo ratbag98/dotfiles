@@ -1,17 +1,18 @@
+mas "com.kirsteins.chords-and-scales-mac", id: 1435473426
+mas "Craft", id: 1487937127
 mas "DevUtils", id: 1533756032
 mas "FileBot", id: 905384638
 mas "Final Cut Pro", id: 424389933
 mas "GoPro Player", id: 1460836908
 mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
-mas "Kindle Classic", id: 405399194
+mas "Logic Pro", id: 634148309
 mas "Mactracker", id: 430255202
 mas "Magnet", id: 441258766
 mas "Metadatics", id: 554883654
 mas "MIDI Loupe", id: 507075182
 mas "MindNode", id: 1289197285
 mas "Motion", id: 434290957
-mas "NordVPN", id: 905953485
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "PCalc", id: 403504866
@@ -39,22 +40,17 @@ brew "autoconf"
 brew "automake"
 brew "awk"
 brew "bash"
-brew "bat"
 brew "bench"
-brew "bottom"
 brew "pkg-config"
 brew "lzo"
 brew "cmake"
 brew "coreutils"
 brew "curl"
-brew "difftastic"
 brew "diffutils"
 brew "docbook"
 brew "docbook-xsl"
 brew "dos2unix"
 brew "duf"
-brew "dust"
-brew "fd"
 brew "nettle"
 brew "icu4c"
 brew "ffmpeg"
@@ -67,7 +63,6 @@ brew "gcc"
 brew "gd"
 brew "gdbm"
 brew "git"
-brew "git-delta"
 brew "git-flow"
 brew "gnu-getopt"
 brew "gnu-indent"
@@ -99,7 +94,6 @@ brew "libyaml"
 brew "mas"
 brew "mosh"
 brew "nano"
-brew "neovim"
 brew "nmap"
 brew "openssl@1.1"
 brew "pandoc"
@@ -109,21 +103,18 @@ brew "poppler"
 brew "popt"
 brew "portmidi"
 brew "postgresql@15", restart_service: true
-brew "procs"
 brew "pth"
 brew "pwgen"
-brew "sqlite"
 brew "qrencode"
 brew "recode"
 brew "rename"
-brew "ripgrep"
 brew "shellcheck"
 brew "sox"
+brew "sqlite"
 brew "squashfs"
 brew "ssh-copy-id"
 brew "tcl-tk"
 brew "tidy-html5"
-brew "tldr"
 brew "tmux"
 brew "tree"
 brew "unixodbc"
@@ -135,9 +126,9 @@ brew "xmlto"
 brew "xxhash"
 brew "zbar"
 brew "zlib"
-brew "zoxide"
 cask "basictex"
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "keycastr"
+cask "kitty"
