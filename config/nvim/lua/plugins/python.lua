@@ -23,7 +23,7 @@ return {
     },
     opts = {
       dap_enabled = true, -- makes the debugger work with venv
-      parents = 0, -- search taking a long time, default to just poetry in this directory
+      parents = 1, -- search taking a long time, default to just poetry in this directory
     },
     event = "VeryLazy",
     keys = {
