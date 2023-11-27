@@ -48,7 +48,7 @@ return {
       local lspCapabilities = require("cmp_nvim_lsp").default_capabilities()
       lspCapabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      local servers = { "taplo", "tsserver", "cssls", "svelte", "prismals" }
+      local servers = { "taplo", "tsserver", "cssls", "prismals" }
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup({
@@ -95,7 +95,7 @@ return {
       })
 
       lspconfig.graphql.setup({
-        filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+        filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
         capabilities = lspCapabilities,
       })
 
@@ -121,7 +121,7 @@ return {
       })
 
       lspconfig.emmet_ls.setup({
-        filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+        filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
         capabilities = lspCapabilities,
       })
 
