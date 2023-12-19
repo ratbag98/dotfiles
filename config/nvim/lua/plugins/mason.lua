@@ -27,16 +27,12 @@ return {
     mason_lspconfig.setup({
       ensure_installed = {
         "pyright", -- LSP for python
-        "taplo",
+        "taplo", -- LSP for TOML files
         "tsserver",
         "html",
         "cssls",
-        "tailwindcss",
-        -- "svelte",
+        "tailwindcss", -- used by PragProg LiveView course
         "lua_ls",
-        "graphql",
-        "emmet_ls",
-        "prismals",
       },
     })
     mason_tool_installer.setup({

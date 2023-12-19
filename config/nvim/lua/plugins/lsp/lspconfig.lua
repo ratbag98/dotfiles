@@ -48,7 +48,7 @@ return {
       local lspCapabilities = require("cmp_nvim_lsp").default_capabilities()
       lspCapabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      local servers = { "taplo", "tsserver", "cssls", "prismals" }
+      local servers = { "taplo", "tsserver", "cssls" }
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup({
@@ -94,11 +94,6 @@ return {
         },
       })
 
-      lspconfig.graphql.setup({
-        filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
-        capabilities = lspCapabilities,
-      })
-
       lspconfig.tailwindcss.setup({
         capabilities = lspCapabilities,
         filetypes = { "html", "eelixir", "heex" },
@@ -118,11 +113,6 @@ return {
             },
           },
         },
-      })
-
-      lspconfig.emmet_ls.setup({
-        filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
-        capabilities = lspCapabilities,
       })
 
       local _border = "rounded"
