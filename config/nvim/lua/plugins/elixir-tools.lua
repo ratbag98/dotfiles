@@ -10,7 +10,7 @@ return {
         enable = true,
         settings = require("elixir.elixirls").settings({
           dialyzerEnabled = true,
-          enableTestLenses = false,
+          enableTestLenses = true,
         }),
         ---@diagnostic disable-next-line: unused-local
         on_attach = function(client, bufnr)
