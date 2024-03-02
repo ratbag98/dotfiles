@@ -6,7 +6,6 @@ mas "Final Cut Pro", id: 424389933
 mas "GoPro Player", id: 1460836908
 mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
-mas "Kindle Classic", id: 405399194
 mas "Logic Pro", id: 634148309
 mas "Mactracker", id: 430255202
 mas "Magnet", id: 441258766
@@ -116,7 +115,6 @@ brew "squashfs"
 brew "ssh-copy-id"
 brew "tcl-tk"
 brew "tidy-html5"
-brew "tldr"
 brew "tmux"
 brew "tree"
 brew "unixodbc"

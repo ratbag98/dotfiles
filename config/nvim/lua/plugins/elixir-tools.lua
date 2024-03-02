@@ -4,13 +4,15 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     require("elixir").setup({
-      nextls = { enable = true },
+      nextls = { enable = false },
       credo = { enable = false }, -- use project version instead
       elixirls = {
         enable = true,
+        cmd = "/Users/rob/src/elixir-ls/rel/language_server.sh",
         settings = require("elixir.elixirls").settings({
           dialyzerEnabled = true,
           enableTestLenses = true,
+          suggestSpecs = true,
         }),
         ---@diagnostic disable-next-line: unused-local
         on_attach = function(client, bufnr)
