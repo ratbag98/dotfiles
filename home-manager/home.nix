@@ -7,6 +7,9 @@
       pkgs.vim 
       fzf
       pkgs.ripgrep
+      pkgs.fd
+      pkgs.eza
+      pkgs.bat
     ];
 
     file = {
@@ -29,7 +32,7 @@
       enable = true;
       defaultEditor = true;
 
-      extraLuaConfig = lib.fileContents ../config/nvim/init.lua;
+#  extraLuaConfig = lib.fileContents ../config/nvim/init.lua;
     };
 
     zoxide = {
@@ -47,6 +50,15 @@
       plugins = [
       {name = "fzfi-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
       ];
+
+      functions = {
+        ll = "eza -l -g --icons $argv";
+        vim = "nvim";
+      };
+
+      shellAliases = {
+        cat = "bat";
+      };
     };
 
     git = {
