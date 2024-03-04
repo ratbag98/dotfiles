@@ -1,6 +1,4 @@
 mas "com.kirsteins.chords-and-scales-mac", id: 1435473426
-mas "Craft", id: 1487937127
-mas "DevUtils", id: 1533756032
 mas "FileBot", id: 905384638
 mas "Final Cut Pro", id: 424389933
 mas "GoPro Player", id: 1460836908
@@ -8,7 +6,6 @@ mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
 mas "Logic Pro", id: 634148309
 mas "Mactracker", id: 430255202
-mas "Magnet", id: 441258766
 mas "Metadatics", id: 554883654
 mas "MIDI Loupe", id: 507075182
 mas "MindNode", id: 1289197285
@@ -17,13 +14,11 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "PCalc", id: 403504866
 mas "PDF Expert", id: 1055273043
-mas "Playgrounds", id: 1496833156
 mas "Remote Desktop", id: 409907375
 mas "Speedtest", id: 1153157709
 mas "Telegram", id: 747648890
 mas "TestFlight", id: 899247664
 mas "TNEF's Enough", id: 986621173
-mas "Trello", id: 1278508951
 mas "WhatsApp", id: 1147396723
 mas "WiFi Explorer", id: 494803304
 mas "Wipr", id: 1320666476
@@ -35,7 +30,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "mas-cli/tap"
-tap "neovim/neovim"
 brew "agg"
 brew "xz"
 brew "autoconf"
@@ -133,5 +127,4 @@ cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "keycastr"
-cask "kitty"
 

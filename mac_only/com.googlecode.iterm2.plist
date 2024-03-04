@@ -4344,6 +4344,8 @@
 	<true/>
 	<key>RestoreWindowsToSameSpaces</key>
 	<true/>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
