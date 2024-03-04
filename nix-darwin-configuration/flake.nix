@@ -23,7 +23,19 @@
                 verbose = true;
                 users.rob = import ../home-manager/home.nix;
               };
-             users.users.rob.home = "/Users/rob";
+              users.users.rob.home = "/Users/rob";
+            }
+        ];
+      };
+      "TestLaptop" = nix-darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        modules = [
+          ./darwin.nix
+            home-manager.darwinModules.home-manager  {
+              home-manager = {
+                users.rob = import ../home-manager/home.nix;
+              };
+              users.users.rob.home = "/Users/rob";
             }
         ];
       };
