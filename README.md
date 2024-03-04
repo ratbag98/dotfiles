@@ -1,3 +1,11 @@
+# New dotfiles
+
+Now with added Nix-ness.
+
+1. Install Nix: https://github.com/DeterminateSystems/nix-installer
+2. Clone this
+3. 
+
 dotfiles
 ========
 

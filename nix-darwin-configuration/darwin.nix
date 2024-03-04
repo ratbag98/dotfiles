@@ -36,6 +36,7 @@
     casks = [  
       "font-jetbrains-mono-nerd-font"
       "raycast"
+      "obsidian"
     ] ;
     masApps = {
       "com.kirsteins.chords-and-scales-mac" = 1435473426;
