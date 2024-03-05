@@ -1,9 +1,13 @@
 {...}:
 {
+  home.file = {
+    ".githelpers".source = ../config/git/githelpers;
+  };
+
   programs.git = {
     enable = true;
-    userName = "Robert Rainthorpe";
-    userEmail = "rob.rainthorpe@me.com";
+    userName = "Rob Rainthorpe";
+    userEmail = "robr@robrainthorpe.com";
     ignores = [ ".CFUserTextEncoding" ".DS_Store" ".Trash/" "*.swp" ];
     extraConfig = {
       pull = {

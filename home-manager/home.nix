@@ -47,6 +47,7 @@
 
     file = {
       ".vimrc".source = ./vim_configuration;
+      ".tool-versions".source = ../config/asdf/tool-versions;
     };
 
     sessionVariables = {
