@@ -3,6 +3,9 @@
 {
   environment.systemPackages = [
     pkgs.home-manager
+      pkgs.git
+      pkgs.wget
+      pkgs.less
   ];
 
 

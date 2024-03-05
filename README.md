@@ -2,9 +2,19 @@
 
 Now with added Nix-ness.
 
+0. Install Homebrew (no Nix way to do it!): https://brew.sh/
 1. Install Nix: https://github.com/DeterminateSystems/nix-installer
 2. Clone this
-3. 
+3. Bootstrap: 
+
+```bash
+nix run nix-darwin -- switch --flake ./dotfiles/nix-darwin-configuration
+```
+
+Enable raycast (start it, set key)
+Enable latest Obsidian (login to licence)
+
+
 
 dotfiles
 ========

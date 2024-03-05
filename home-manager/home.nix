@@ -1,15 +1,36 @@
 { config, pkgs, lib, ...}: 
+
 {
+  imports = [
+    ./nvim.nix
+    ./git.nix
+    ./tmux.nix
+  ];
+
   home = {
     stateVersion = "23.05";
     packages = with pkgs; [ 
       zoxide 
-      pkgs.vim 
+      vim 
       fzf
-      pkgs.ripgrep
-      pkgs.fd
-      pkgs.eza
-      pkgs.bat
+      ripgrep
+      fd
+      eza
+      bat
+      curlFull
+      mc
+      mosh
+      nano
+      neofetch
+      nmap
+      pandoc
+      inlyne
+      asciinema-agg
+      poppler_utils
+      bandwhich
+      du-dust
+      dua
+      procs
     ];
 
     file = {
@@ -28,11 +49,12 @@
       };
     };
 
-    neovim = {
+    lazygit = {
       enable = true;
-      defaultEditor = true;
+    };
 
-#  extraLuaConfig = lib.fileContents ../config/nvim/init.lua;
+    tealdeer = {
+      enable = true;
     };
 
     zoxide = {
@@ -40,6 +62,15 @@
       enableFishIntegration = true;
       options = [ "--cmd cd" ];
 
+    };
+
+    bottom = {
+      enable = true;
+      settings = {
+        temperature_type = "celsius";
+        tree = false;
+        show_table_scroll_position = true;
+      };
     };
 
     fish = {
@@ -52,47 +83,12 @@
       ];
 
       functions = {
-        ll = "eza -l -g --icons $argv";
-        vim = "nvim";
       };
 
       shellAliases = {
         cat = "bat";
-      };
-    };
-
-    git = {
-      enable = true;
-      userName = "Robert Rainthorpe";
-      userEmail = "rob.rainthorpe@me.com";
-      ignores = [ ".CFUserTextEncoding" ".DS_Store" ".Trash/" "*.swp" ];
-      extraConfig = {
-        pull = {
-          rebase = true;
-        };
-      };
-      aliases = {
-        st = "status";
-        ci = "commit";
-        co = "checkout";
-        di = "diff";
-        dc = "diff --cached";
-        amend = "commit --amend";
-        aa = "add --all";
-        ff = "merge --ff-only";
-        pullff = "pull --ff-only";
-        noff = "merge --no-ff";
-        fa = "fetch --all";
-        pom = "push origin master";
-        b = "branch";
-        ds = "diff --stat=160,120";
-        dh1 = "diff HEAD~1";
-        div = "divergence";
-        head = "!git l -1";
-        h = "!git head";
-        r = "!git l -30";
-        ra = "!git r --all";
-        la = "!git l --all";
+        ll = "eza -l -g --icons $argv";
+        vim = "nvim";
       };
     };
   };
