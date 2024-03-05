@@ -48,6 +48,7 @@
     file = {
       ".vimrc".source = ./vim_configuration;
       ".tool-versions".source = ../config/asdf/tool-versions;
+      ".pandoc.yaml".source = ../config/pandoc/pandoc.yaml; # TODO need a Linux version
     };
 
     sessionVariables = {

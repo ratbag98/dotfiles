@@ -6,6 +6,7 @@
       pkgs.git
       pkgs.wget
       pkgs.less
+      pkgs.iterm2
   ];
 
 

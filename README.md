@@ -8,7 +8,7 @@ Now with added Nix-ness.
 3. Bootstrap: 
 
 ```bash
-nix run nix-darwin -- switch --flake ./dotfiles/nix-darwin-configuration
+nix run nix-darwin -- switch --flake ./dotfiles/
 ```
 
 Enable raycast (start it, set key)

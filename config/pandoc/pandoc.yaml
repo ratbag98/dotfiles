@@ -1,0 +1,5 @@
+---
+resource-path: ["/Users/rob/Library/Mobile Documents/iCloud~md~obsidian/Documents/Zettelkasten/Extras/Files"]
+bibliography: /Users/rob/Downloads/library.bib 
+csl: /Users/rob/Downloads/apa.csl
+include-in-header: /Users/rob/Documents/ObsidianExports/disable_float.tex
