@@ -45,7 +45,7 @@
     zsh = {
       enable = true;
       shellAliases = {
-        switch = "darwin-rebuild switch --flake ~/dotfiles/nix-darwin-configuration";
+        switch = "darwin-rebuild switch --flake ~/dotfiles/";
       };
     };
 
