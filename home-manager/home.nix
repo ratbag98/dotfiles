@@ -10,27 +10,39 @@
   home = {
     stateVersion = "23.11";
     packages = with pkgs; [ 
-      zoxide 
-      vim 
-      fzf
-      ripgrep
-      fd
-      eza
+      asciinema-agg
+      automake
+      bandwhich
       bat
+      bench
+      cmake
       curlFull
+      dos2unix
+      du-dust
+      dua
+      duf
+      eza
+      fd
+      fzf
+      gawk
+      gnused
+      gnutar
+      html-tidy
+      inlyne
       mc
       mosh
       nano
       neofetch
       nmap
       pandoc
-      inlyne
-      asciinema-agg
+      paperkey
       poppler_utils
-      bandwhich
-      du-dust
-      dua
       procs
+      qrencode
+      ripgrep
+      ssh-copy-id
+      vim 
+      zoxide 
     ];
 
     file = {
@@ -71,6 +83,10 @@
         tree = false;
         show_table_scroll_position = true;
       };
+    };
+
+    jq = {
+      enable = true;
     };
 
     fish = {

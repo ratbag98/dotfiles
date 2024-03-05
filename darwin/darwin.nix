@@ -32,65 +32,12 @@
 
   homebrew = {
     enable = true;
-# onActivation.cleanup = "uninstall";
+    onActivation.cleanup = "uninstall";
 
     taps = [];
     brews = [ 
-      "automake"
-      "awk"
-      "bench"
-      "cmake"
-      "coreutils"
-      "diffutils"
-      "dos2unix"
-      "duf"
-      "ffmpeg"
-      "findutils"
-      "fop"
-      "fwup"
-      "gd"
-      "gdbm"
-      "gnu-indent"
-      "gnu-sed"
-      "gnu-tar"
-      "grep"
-      "jq"
-      "lego"
-      "libdvdcss"
-      "libepoxy"
-      "libffi"
-      "libksba"
-      "librsvg"
-      "libusb-compat"
-      "libxslt"
-      "libyaml"
       "mas"
-      "npth"
-      "paperkey"
-      "pgformatter"
-      "pinentry"
-      "pkg-config"
-      "popt"
-      "portmidi"
       "postgresql@15"
-      "pth"
-      "pwgen"
-      "qrencode"
-      "recode"
-      "rename"
-      "shellcheck"
-      "sqlite"
-      "squashfs"
-      "ssh-copy-id"
-      "tcl-tk"
-      "tidy-html5"
-      "unixodbc"
-      "watch"
-      "wxwidgets"
-      "xmlto"
-      "xxhash"
-      "zbar"
-      "zlib"
       ];
     casks = [  
       "basictex"
@@ -136,7 +83,7 @@
   system.defaults = {
     dock = {
       autohide = true;
-      orientation = "left";
+      orientation = "bottom";
       show-process-indicators = false;
       show-recents = false;
       static-only = true;
