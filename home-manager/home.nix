@@ -23,7 +23,6 @@
       duf
       eza
       fd
-      fzf
       gawk
       gnused
       gnutar
@@ -49,12 +48,18 @@
       ".vimrc".source = ./vim_configuration;
       ".tool-versions".source = ../config/asdf/tool-versions;
       ".pandoc.yaml".source = ../config/pandoc/pandoc.yaml; # TODO need a Linux version
+      ".pylintrc".source = ../config/python/pylintrc;
+      
     };
 
     sessionVariables = {
     };
   };
   xdg.enable = true;
+  xdg.configFile."procs/config.toml".source = ../config/procs/config.toml;
+  xdg.configFile."mc".source = ../config/mc;
+  xdg.configFile."neofetch".source = ../config/neofetch;
+
   programs = {
     zsh = {
       enable = true;
@@ -91,6 +96,11 @@
       enable = true;
     };
 
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    
     fish = {
       enable = true;
       interactiveShellInit  = ''
