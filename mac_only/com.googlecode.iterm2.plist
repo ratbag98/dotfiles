@@ -11,7 +11,7 @@
 	<key>CheckTestRelease</key>
 	<false/>
 	<key>Command</key>
-	<string></string>
+	<string>/Users/rob/.nix-profile/bin/fish</string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>catppuccin-frappe</key>

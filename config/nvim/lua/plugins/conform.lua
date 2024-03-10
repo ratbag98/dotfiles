@@ -19,6 +19,7 @@ return {
       formatters_by_ft = {
         python = { "black" },
         lua = { "stylua" },
+        nix = { "nixpkgs-fmt" },
       },
       -- enable format-on-save
       format_on_save = {

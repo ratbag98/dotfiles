@@ -9,19 +9,23 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
-
-  outputs = { nixpkgs, home-manager, flake-utils, ... }:
+blatant problem
+  outputs = { nixpkgs, home-manager, flake-utils, neovim-nightly-overlay, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in {
+        pkgs = nixpkgs.legacyPackages.${system} {overlays = [ neovim-nightly-overlay.overlay ]; };
+      in
+      {
         homeConfigurations.rob = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
           # Specify your home configuration modules here, for example,
           # the path to your home.nix.
-          modules = [ ./home.nix ];
+          modules = [
+            ./home.nix
+          ];
 
           # Optionally use extraSpecialArgs
           # to pass through arguments to home.nix

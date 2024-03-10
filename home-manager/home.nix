@@ -1,23 +1,18 @@
-{ config, pkgs, lib, ...}: 
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
-    ./nvim.nix
     ./git.nix
     ./tmux.nix
   ];
 
   home = {
     stateVersion = "23.11";
-    packages = with pkgs; [ 
-      asciinema-agg
-      automake
+    packages = with pkgs; [
       bandwhich
       bat
       bench
-      cmake
       curlFull
-      dos2unix
       du-dust
       dua
       duf
@@ -33,15 +28,17 @@
       nano
       neofetch
       nmap
+      nixpkgs-fmt
       pandoc
       paperkey
       poppler_utils
       procs
       qrencode
       ripgrep
+      sd
       ssh-copy-id
-      vim 
-      zoxide 
+      vim
+      zoxide
     ];
 
     file = {
@@ -49,75 +46,16 @@
       ".tool-versions".source = ../config/asdf/tool-versions;
       ".pandoc.yaml".source = ../config/pandoc/pandoc.yaml; # TODO need a Linux version
       ".pylintrc".source = ../config/python/pylintrc;
-      
+
     };
 
-    sessionVariables = {
-    };
+    sessionVariables = { };
   };
   xdg.enable = true;
   xdg.configFile."procs/config.toml".source = ../config/procs/config.toml;
   xdg.configFile."mc".source = ../config/mc;
   xdg.configFile."neofetch".source = ../config/neofetch;
+  #  xdg.configFile."fish/completions/nix.fish".source = "${pkgs.nix}/share/fish/vendor_completions.d/nix.fish";
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/nvim";
 
-  programs = {
-    zsh = {
-      enable = true;
-      shellAliases = {
-        switch = "darwin-rebuild switch --flake ~/dotfiles/";
-      };
-    };
-
-    lazygit = {
-      enable = true;
-    };
-
-    tealdeer = {
-      enable = true;
-    };
-
-    zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-      options = [ "--cmd cd" ];
-
-    };
-
-    bottom = {
-      enable = true;
-      settings = {
-        temperature_type = "celsius";
-        tree = false;
-        show_table_scroll_position = true;
-      };
-    };
-
-    jq = {
-      enable = true;
-    };
-
-    fzf = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-    
-    fish = {
-      enable = true;
-      interactiveShellInit  = ''
-        set fish_greeting # disable greeting
-        '';
-      plugins = [
-      {name = "fzfi-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
-      ];
-
-      functions = {
-      };
-
-      shellAliases = {
-        cat = "bat";
-        ll = "eza -l -g --icons $argv";
-        vim = "nvim";
-      };
-    };
-  };
 }
