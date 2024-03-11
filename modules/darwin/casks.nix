@@ -2,7 +2,7 @@ _:
 
 [
       "basictex"
-#      "keycastr"
-#      "raycast"
+      "keycastr"
+      "raycast"
 #      "obsidian"
 ]

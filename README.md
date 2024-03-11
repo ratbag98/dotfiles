@@ -1,47 +1,36 @@
-# New dotfiles
+# Nix-based setup
 
-Now with added Nix-ness.
-
-0. Install Homebrew (no Nix way to do it!): https://brew.sh/
-1. Install Nix: https://github.com/DeterminateSystems/nix-installer
-2. Clone this
-3. Bootstrap: 
+1. Install Nix
 
 ```bash
-nix run nix-darwin -- switch --flake ./dotfiles/
+xcode-select --install
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
-Enable raycast (start it, set key)
-Enable latest Obsidian (login to licence)
+2. Install homebrew
 
-
-
-dotfiles
-========
-
-Fish config is excluded deliberately - it doesn't have a clean host-specific configuration mechanism.
-
-Clone the repo then
+Should be available via Nix, but seems to be a problem so:
 
 ```bash
-cd
-chmod +x dotfiles/setup.sh
-dotfiles/setup.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-Restart terminal. Copy fish files into place
+
+3. Clone this repo to `~/dotfiles` or similar.
+
+4. Backup and remove any existins `~/.config`.
+
+5. Build the setup.
 
 ```bash
-cp -R dotfiles/fish/* ~/config/fish
+nix run .#build
 ```
 
-and install plugins:
+6. Assuming no errors, run the setup:
 
 ```bash
-fisher update
+nix run .#build-switch
 ```
 
-Add `asdf` to fish config. Add the following to `.config/fish/config.fish`:
+7. Open a new terminal and enjoy.
 
-```text
-source ~/.asdf/asdf.fish
-````
+
