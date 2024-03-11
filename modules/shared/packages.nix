@@ -32,6 +32,7 @@ with pkgs; [
   tree
   wget
   zip
+  zoom-us
   zoxide
 
 # Node.js development tools

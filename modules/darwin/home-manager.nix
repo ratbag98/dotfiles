@@ -56,7 +56,7 @@ in
       "WhatsApp" = 1147396723;
       "WiFi Explorer" = 494803304;
       "Wipr" = 1320666476;
-      "Xcode" = 497799835;
+#      "Xcode" = 497799835;
       "Yubico Authenticator" = 1497506650;
       "ZOA" = 1581881354;
     };
