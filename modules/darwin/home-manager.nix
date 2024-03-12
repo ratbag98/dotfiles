@@ -21,6 +21,7 @@ in
 
   homebrew = {
     enable = true;
+    taps = pkgs.callPackage ./taps.nix {};
     casks = pkgs.callPackage ./casks.nix {};
     brews = pkgs.callPackage ./brews.nix {};
 
