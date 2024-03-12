@@ -1,21 +1,28 @@
 # Nix-based setup
 
-1. Install Nix
-
-```bash
-xcode-select --install
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
-```
-
-2. Install homebrew
+1. Install homebrew
 
 Should be available via Nix, but seems to be a problem so:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+2. Install Nix
+
+```bash
+xcode-select --install
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
 
 3. Clone this repo to `~/dotfiles` or similar.
+
+```bash
+git clone https://github.com/ratbag98/dotfiles.git
+chmod +x apps/aarch64-darwin/apply
+chmod +x apps/aarch64-darwin/build
+chmod +x apps/aarch64-darwin/build-switch
+chmod +x apps/aarch64-darwin/rollback
+```
 
 4. Backup and remove any existins `~/.config`.
 

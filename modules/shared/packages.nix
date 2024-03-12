@@ -14,7 +14,6 @@ with pkgs; [
   fira-code-nerdfont
   html-tidy
   inlyne
-  jetbrains-mono
   mc
   meslo-lgs-nf
   mosh
