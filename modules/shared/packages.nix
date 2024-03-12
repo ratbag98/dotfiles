@@ -11,7 +11,6 @@ with pkgs; [
   duf
   eza
   fd
-  fira-code-nerdfont
   html-tidy
   inlyne
   mc
