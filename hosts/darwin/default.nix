@@ -59,13 +59,19 @@ let user = "rob"; in
   };
 
 
-# Create /etc/zshrc that loads the nix-darwin environment.
   programs = {
+    # Create /etc/zshrc that loads the nix-darwin environment.
     zsh.enable = true;
+
     fish  = {
       enable = true;
       interactiveShellInit = ''
-        eval (/opt/homebrew/bin/brew shellenv)
+      if [[ $(arch) != arm64* ]]
+      then
+	eval (/usr/local/bin/brew shellenv)
+      else
+	eval (/opt/homebrew/bin/brew shellenv)
+      fi
       '';
     };
   };
