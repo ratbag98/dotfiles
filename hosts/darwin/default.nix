@@ -1,4 +1,4 @@
- config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 let user = "rob"; in
 
@@ -66,7 +66,7 @@ let user = "rob"; in
     fish  = {
       enable = true;
       interactiveShellInit = ''
-      set a (/usr/bin/arch)
+      set a  (/usr/bin/arch)
       if test $a='arm64*'
 	eval (/opt/homebrew/bin/brew shellenv)
       else
