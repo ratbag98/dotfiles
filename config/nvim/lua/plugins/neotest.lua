@@ -5,7 +5,8 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "antoinemadec/FixCursorHold.nvim",
-    { "nvim-neotest/neotest-python" },
+    "nvim-neotest/neotest-python",
+    "nvim-neotest/nvim-nio",
   },
   config = function()
     ---@diagnostic disable-next-line: missing-fields
