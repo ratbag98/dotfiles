@@ -66,10 +66,11 @@ let user = "rob"; in
     fish  = {
       enable = true;
       interactiveShellInit = ''
-      if /usr/bin/arch != "arm64*" 
-	eval (/usr/local/bin/brew shellenv)
-      else
+      set a = (/usr/bin/arch)
+      if test $v='arm64*'
 	eval (/opt/homebrew/bin/brew shellenv)
+      else
+	eval (/usr/local/bin/brew shellenv)
       end
       '';
     };
