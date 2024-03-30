@@ -26,6 +26,8 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, flake-utils, nixpkgs, ...} @ inputs:
@@ -79,7 +81,7 @@
     in 
       darwin.lib.darwinSystem {
         inherit system;
-        specialArgs = inputs;
+        specialArgs = { inherit inputs; };
         modules = [
           home-manager.darwinModules.home-manager
 #          nix-homebrew.darwinModules.nix-homebrew
