@@ -1,5 +1,5 @@
 _:
 
 [
-  "homebrew/cask-fonts"
+  # "homebrew/cask-fonts"
 ]

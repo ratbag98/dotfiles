@@ -14,6 +14,13 @@ let user = "rob"; in
     package = pkgs.nixUnstable;
     settings.trusted-users = [ "@admin" "${user}"];
 
+    gc = {
+      user = "root";
+      automatic = true;
+      interval = { Weekday = 0; Hour = 2; Minute = 0; };
+      options = "--delete-older-than 30d";
+    };
+
     extraOptions = '' 
       experimental-features = nix-command flakes
     '';
@@ -23,11 +30,7 @@ let user = "rob"; in
 
   # Load configuration shared across all Darwin machines
   environment.systemPackages = with pkgs; [
-    # home-manager
-    # git
-    # wget
-    # less
-    # iterm2
+    # emacs-unstable
   ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
 
 
@@ -65,13 +68,13 @@ let user = "rob"; in
 
     fish  = {
       enable = true;
-      interactiveShellInit = ''
-      if test (/usr/bin/arch) = 'arm64'
-	eval (/opt/homebrew/bin/brew shellenv)
-      else
-	eval (/usr/local/bin/brew shellenv)
-      end
-      '';
+	#      interactiveShellInit = ''
+	#      if test (/usr/bin/arch) = 'arm64'
+	# eval (/opt/homebrew/bin/brew shellenv)
+	#      else
+	# eval (/usr/local/bin/brew shellenv)
+	#      end
+	#      '';
     };
   };
 

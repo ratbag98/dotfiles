@@ -11,10 +11,11 @@ with pkgs; [
   duf
   eza
   fd
+  gnupg
   html-tidy
   inlyne
+  jq
   mc
-  meslo-lgs-nf
   mosh
   nano
   neofetch
@@ -29,9 +30,14 @@ with pkgs; [
   sqlite
   tree
   wget
+  unzip
   zip
   zoom-us
   zoxide
+
+  # fonts
+  meslo-lgs-nf
+  (nerdfonts.override { fonts = ["JetBrainsMono" "FiraCode"]; })
 
 # Node.js development tools
   nodePackages.npm # globally install npm
