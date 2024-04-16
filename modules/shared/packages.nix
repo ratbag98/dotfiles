@@ -3,7 +3,7 @@
 with pkgs; [
   bandwhich
   bat
-  bench
+#  bench - injects haskell, which is big
   coreutils
   curlFull
   du-dust
