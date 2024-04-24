@@ -84,7 +84,7 @@ email = "robr@robrainthorpe.com"; in
   
   fzf = {
     enable = true;
-    enableFishIntegration = true;
+  #  enableFishIntegration = true;
   };
   
   fish = {
@@ -94,6 +94,7 @@ email = "robr@robrainthorpe.com"; in
       '';
     plugins = [
     { name = "fzfi-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
+    # https://github.com/PatrickF1/fzf.fish
     ];
   
     functions = { };

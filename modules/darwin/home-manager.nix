@@ -81,6 +81,7 @@ in
       xdg.enable = true;  
       xdg.configFile."procs".source = ../../config/procs;
       xdg.configFile."mc".source = ../../config/mc;
+      xdg.configFile."bat".source = ../../config/bat;
       xdg.configFile."neofetch".source = ../../config/neofetch;
       xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/nvim";
 
