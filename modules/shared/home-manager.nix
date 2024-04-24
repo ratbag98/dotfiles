@@ -91,6 +91,7 @@ email = "robr@robrainthorpe.com"; in
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # disable greeting
+      set -x BAT_THEME tokyonight_storm
       '';
     plugins = [
     { name = "fzfi-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
@@ -101,7 +102,7 @@ email = "robr@robrainthorpe.com"; in
   
     shellAliases = {
       cat = "bat";
-      ll = "eza -l -g --icons $argv";
+      ll = "eza -l --git --hyperlink --no-permissions --icons $argv";
       vim = "nvim";
     };
   };
@@ -176,9 +177,9 @@ email = "robr@robrainthorpe.com"; in
       background = "dark";
     };
 
-#    delta = {
-#      enable = true;
-#    };
+    # delta = {
+    #   enable = true;
+    # };
 
     aliases = {
       st = "status";
