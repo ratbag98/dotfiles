@@ -1,18 +1,18 @@
 return {
   "elixir-tools/elixir-tools.nvim",
   version = "*",
-  event = { "BufReadPre", "BufNewFile" },
+  ft = "elixir",
+  --  event = { "BufReadPre", "BufNewFile" },
   config = function()
     require("elixir").setup({
-      nextls = { enable = false },
+      nextls = { enable = true },
       credo = { enable = false }, -- use project version instead
       elixirls = {
         enable = true,
-        cmd = "/Users/rob/src/elixir-ls/rel/language_server.sh",
         settings = require("elixir.elixirls").settings({
           dialyzerEnabled = true,
-          enableTestLenses = true,
-          suggestSpecs = true,
+          enableTestLenses = false,
+          suggestSpecs = false,
         }),
         ---@diagnostic disable-next-line: unused-local
         on_attach = function(client, bufnr)
