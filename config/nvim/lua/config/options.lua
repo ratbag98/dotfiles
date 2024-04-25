@@ -79,18 +79,19 @@ vim.g.rustaceanvim = {
   },
 }
 
--- Enable inlay_hints whenever LSP running
 vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client.server_capabilities.inlayHintProvider then
-      vim.lsp.inlay_hint.enable(args.buf, true)
+  desc = "Enable inlay hints",
+  callback = function(event)
+    local id = vim.tbl_get(event, "data", "client_id")
+    local client = id and vim.lsp.get_client_by_id(id)
+    if client == nil or not client.supports_method("textDocument/inlayHint") then
+      return
     end
-    -- whatever other lsp config you want
+
+    -- TODO learn about the filter argument and use it to limit to one buffer
+    vim.lsp.inlay_hint.enable(true)
   end,
 })
-
 -- Customization for Pmenu
 -- pretty colours for the completion menu
 vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
