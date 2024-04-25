@@ -7,7 +7,7 @@ return {
   -- better indentation behavior
   -- by default, vim has some weird indentation behavior in some edge cases,
   -- which this plugin fixes
-  { "Vimjas/vim-python-pep8-indent" },
+  { "Vimjas/vim-python-pep8-indent", ft = "python" },
 
   -- select virtual environments
   -- - makes pyright and debugpy aware of the selected virtual environment
