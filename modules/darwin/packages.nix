@@ -6,5 +6,5 @@ shared-packages ++ [
   dockutil
 
   # added by rob
-  iterm2
+  # iterm2 - retired in favour of kitty
 ]

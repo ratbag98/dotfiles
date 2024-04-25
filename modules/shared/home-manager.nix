@@ -10,29 +10,33 @@ email = "robr@robrainthorpe.com"; in
     font = {
       name = "JetBrainsMono Nerd Font Mono";
       size = 17;
-     };
-     shellIntegration.enableFishIntegration = true;
-     theme = "Tokyo Night Storm";
-     settings = {
-        bold_font = "JetBrainsMono Nerd Font Mono ExtraBold";
-        bold_italic_font = "JetBrainsMono Nerd Font Mono ExtraBold Italic";
-        shell = "/Users/rob/.nix-profile/bin/fish";
-        draw_minimal_borders = "yes";
-        inactive_text_alpha = "0.7";
-        hide_window_decorations = "no";
-        active_border_color = "none";
-        # enabled_layouts = "splits";
-        # window_border_width = "0";
-        enable_audio_bell = "no";
-        bell_on_tab = "no";
+    };
+    shellIntegration.enableFishIntegration = true;
+    theme = "Tokyo Night Storm";
+    settings = {
+       bold_font = "JetBrainsMono Nerd Font Mono ExtraBold";
+       bold_italic_font = "JetBrainsMono Nerd Font Mono ExtraBold Italic";
+       shell = "/Users/rob/.nix-profile/bin/fish";
+       draw_minimal_borders = "yes";
+       inactive_text_alpha = "0.7";
+       hide_window_decorations = "no";
+       active_border_color = "none";
+       # enabled_layouts = "splits";
+       # window_border_width = "0";
+       enable_audio_bell = "no";
+       bell_on_tab = "no";
 
-        tab_bar_edge = "top";
-        tab_title_template  = "{fmt.fg.c2c2c2}{title}";
-        active_tab_title_template  = "{fmt.fg._fff}{title}";
-        tab_bar_style =  "separator";
-        tab_separator = " |";
-     };
-     keybindings = {
+       tab_bar_edge = "top";
+       tab_title_template  = "{fmt.fg.c2c2c2}{title}";
+       active_tab_title_template  = "{fmt.fg._fff}{title}";
+       tab_bar_style =  "separator";
+       tab_separator = " |";
+
+       remember_window_size = "no";
+       initial_window_width = "96c";
+       initial_window_height = "32c";
+    };
+    keybindings = {
       "cmd+1" = "goto_tab 1";
       "cmd+2" = "goto_tab 2";
       "cmd+3" = "goto_tab 3";
@@ -42,7 +46,7 @@ email = "robr@robrainthorpe.com"; in
       "cmd+7" = "goto_tab 7";
       "cmd+8" = "goto_tab 8";
       "cmd+9" = "goto_tab 9";
-     };
+    };
   };
 
   zsh.enable = true; 
