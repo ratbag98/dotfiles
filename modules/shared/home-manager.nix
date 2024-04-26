@@ -113,6 +113,7 @@ email = "robr@robrainthorpe.com"; in
   
   direnv = {
     enable = true;
+    enableBashIntegration = true;
   
     nix-direnv.enable = true;
   };
