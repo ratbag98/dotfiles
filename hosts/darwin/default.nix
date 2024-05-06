@@ -11,7 +11,7 @@ let user = "rob"; in
   services.nix-daemon.enable = true;
 
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nix;
     settings.trusted-users = [ "@admin" "${user}"];
 
     gc = {
