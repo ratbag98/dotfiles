@@ -20,9 +20,7 @@ email = "robr@robrainthorpe.com"; in
        draw_minimal_borders = "yes";
        inactive_text_alpha = "0.7";
        hide_window_decorations = "no";
-       active_border_color = "none";
-       # enabled_layouts = "splits";
-       # window_border_width = "0";
+       active_border_color = "green";
        enable_audio_bell = "no";
        bell_on_tab = "no";
 

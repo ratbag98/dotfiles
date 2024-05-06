@@ -4,7 +4,6 @@ with pkgs; [
   anki-bin
   bandwhich
   bat
-#  bench - injects haskell, which is big
   coreutils
   curlFull
   du-dust
