@@ -115,6 +115,13 @@ email = "robr@robrainthorpe.com"; in
   
     nix-direnv.enable = true;
   };
+
+  ranger = {
+    enable = true;
+    extraConfig = ''
+      set preview_images_method kitty
+    '';
+  };
   
   starship = {
     enable = true;
@@ -137,32 +144,6 @@ email = "robr@robrainthorpe.com"; in
       jobs.disabled = true;
     };
   };
-
-  tmux = {
-    enable = true;
-    baseIndex = 0;
-    mouse = true;
-    clock24 = true;
-
-    sensibleOnTop = false;
-    prefix = "C-a";
-    escapeTime = 10;
-    shell = "${pkgs.fish}/bin/fish";
-    terminal = "screen-256color";
-
-
-#    extraConfig = lib.fileContents ../config/tmux/tmux.conf;
-
-    plugins = with pkgs.tmuxPlugins; [
-      fuzzback
-      logging
-      pain-control
-      sessionist
-      tmux-thumbs
-      yank
-    ];
-  };
-
 
   git = {
     enable = true;

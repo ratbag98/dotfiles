@@ -15,10 +15,8 @@ with pkgs; [
   html-tidy
   inlyne
   jq
-  mc
   mosh
   nano
-  neofetch
   nixpkgs-fmt
   nmap
   pandoc

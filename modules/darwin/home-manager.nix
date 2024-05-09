@@ -82,7 +82,6 @@ in
       xdg.configFile."procs".source = ../../config/procs;
       xdg.configFile."mc".source = ../../config/mc;
       xdg.configFile."bat".source = ../../config/bat;
-      xdg.configFile."neofetch".source = ../../config/neofetch;
       xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/nvim";
 
       # Marked broken Oct 20, 2022 check later to remove this
