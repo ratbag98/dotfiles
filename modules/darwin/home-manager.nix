@@ -54,7 +54,6 @@ in
       "Telegram" = 747648890;
       "TestFlight" = 899247664;
       "TNEF's Enough" = 986621173;
-      "WhatsApp" = 1147396723;
       "WiFi Explorer" = 494803304;
       "Wipr" = 1320666476;
 #      "Xcode" = 497799835;
