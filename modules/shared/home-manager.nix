@@ -5,6 +5,24 @@ let name = "Rob Rainthorpe";
 user = "rob";
 email = "robr@robrainthorpe.com"; in
 {
+  wezterm = {
+    enable = true;
+    extraConfig = ''
+      return {
+        font = wezterm.font("JetBrains Mono"),
+        font_size = 17.0,
+        color_scheme = 'tokyonight_storm',
+        default_prog = {'/Users/rob/.nix-profile/bin/fish', '-l'},
+        inactive_pane_hsb = {
+          saturation = 0.8,
+          brightness = 0.7,
+        },
+        scrollback_lines = 5000,
+        quit_when_all_windows_are_closed = false,
+      }
+    '';
+  };
+
   kitty = {
     enable = true;
     font = {
