@@ -53,7 +53,7 @@ vim.diagnostic.config({
   virtual_text = false,
   float = {
     border = "rounded",
-    source = "always",
+    -- source = "always",
     focusable = true,
   },
   signs = true,
@@ -79,19 +79,6 @@ vim.g.rustaceanvim = {
   },
 }
 
-vim.api.nvim_create_autocmd("LspAttach", {
-  desc = "Enable inlay hints",
-  callback = function(event)
-    local id = vim.tbl_get(event, "data", "client_id")
-    local client = id and vim.lsp.get_client_by_id(id)
-    if client == nil or not client.supports_method("textDocument/inlayHint") then
-      return
-    end
-
-    -- TODO learn about the filter argument and use it to limit to one buffer
-    vim.lsp.inlay_hint.enable(true)
-  end,
-})
 -- Customization for Pmenu
 -- pretty colours for the completion menu
 vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
