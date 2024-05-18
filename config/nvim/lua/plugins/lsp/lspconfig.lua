@@ -31,7 +31,7 @@ return {
       },
       { "<leader>wr", vim.lsp.buf.remove_workspace_folder, desc = "[W]orkspace [R]emove Folder" },
       { "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, desc = "[W]orkspace [S]ymbols" },
-      { "K", vim.lsp.buf.hover, desc = "Hover Documentation" },
+      -- { "K", vim.lsp.buf.hover, desc = "Hover Documentation" },
       { "gD", vim.lsp.buf.declaration, desc = "[G]oto [D]eclaration" },
       { "gI", vim.lsp.buf.implementation, desc = "[G]oto [I]mplementation" },
       { "gd", vim.lsp.buf.definition, desc = "[G]oto [D]efinition" },
