@@ -41,4 +41,16 @@ with pkgs; [
   nodePackages.npm # globally install npm
   nodePackages.prettier
   nodejs
+
+
+  # Mason replacement
+  taplo
+  stylua
+  lua-language-server
+  tailwindcss-language-server
+  vscode-langservers-extracted 
+  nodePackages_latest.typescript-language-server
+  ruff-lsp
+  pyright
+
 ]

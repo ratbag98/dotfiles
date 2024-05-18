@@ -48,13 +48,18 @@ return {
       local lspCapabilities = require("cmp_nvim_lsp").default_capabilities()
       lspCapabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      local servers = { "taplo", "cssls" }
+      local servers = { "taplo" }
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup({
           capabilities = lspCapabilities,
         })
       end
+
+      lspconfig.cssls.setup({
+        capabilities = lspCapabilities,
+        -- cmd = { "css-languageserver", "--stdio" },
+      })
 
       lspconfig.tsserver.setup({
         capabilities = lspCapabilities,

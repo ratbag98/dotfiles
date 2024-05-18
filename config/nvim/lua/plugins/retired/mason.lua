@@ -26,22 +26,22 @@ return {
 
     mason_lspconfig.setup({
       ensure_installed = {
-        "pyright", -- LSP for python
-        "taplo", -- LSP for TOML files
-        "tsserver",
-        "html",
-        "cssls",
-        "tailwindcss", -- used by PragProg LiveView course
-        "lua_ls",
+        -- "pyright", -- LSP for python
+        -- "taplo", -- LSP for TOML files
+        -- "tsserver",
+        -- "html",
+        -- "cssls",
+        -- "tailwindcss", -- used by PragProg LiveView course
+        -- "lua_ls",
       },
     })
     mason_tool_installer.setup({
       ensure_installed = {
-        "prettier",
-        "ruff-lsp", -- linter for python (includes flake8, pep8, etc.)
-        "stylua",
-        "black",
-        "debugpy", -- debugger
+        -- "prettier",
+        -- "ruff-lsp", -- linter for python (includes flake8, pep8, etc.)
+        -- "stylua",
+        -- "black",
+        -- "debugpy", -- debugger
       },
     })
   end,
