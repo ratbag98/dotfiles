@@ -27,7 +27,8 @@
       flake = false;
     };
 
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # 10 has been released, go back to stable for now
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, flake-utils, nixpkgs, ...} @ inputs:

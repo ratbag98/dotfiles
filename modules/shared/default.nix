@@ -12,7 +12,10 @@ in
       allowUnsupportedSystem = true;
     };
 
-    overlays = [ inputs.neovim-nightly-overlay.overlay];
+    # neovim 10 has been released, go back to stable
+    # overlays = [ inputs.neovim-nightly-overlay.overlay];
+
+
     #  # Apply each overlay found in the /overlays directory
     #  let path = ../../overlays; in with builtins;
     #  map (n: import (path + ("/" + n)))

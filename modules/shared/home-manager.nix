@@ -71,7 +71,8 @@ email = "robr@robrainthorpe.com"; in
     enable = true;
     defaultEditor = true;
     vimAlias = true;
-    package = pkgs.neovim-nightly;
+    extraLuaPackages = ps: [ ps.jsregexp ]; 
+   # package = pkgs.neovim; # -nightly;
   };
   
   lazygit = {
