@@ -138,32 +138,20 @@ email = "robr@robrainthorpe.com"; in
       background = "dark";
     };
 
-    # delta = {
-    #   enable = true;
-    # };
-
     aliases = {
-      st = "status";
-      ci = "commit";
+      s = "status";
+      sb = "status -sb"; # brief status
       co = "checkout";
-      di = "diff";
-      dc = "diff --cached";
-      amend = "commit --amend";
+      cob = "checkout -b"; # create and switch to branch
+      del = "branch -D";
+      br = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate"; # list all branches
       aa = "add --all";
-      ff = "merge --ff-only";
-      pullff = "pull --ff-only";
-      noff = "merge --no-ff";
-      fa = "fetch --all";
-      pom = "push origin master";
-      b = "branch";
-      ds = "diff --stat=160,120";
-      dh1 = "diff HEAD~1";
-      div = "divergence";
-      head = "!git l -1";
-      h = "!git head";
-      r = "!git l -30";
-      ra = "!git r --all";
-      la = "!git l --all";
+      undo = "reset HEAD~1 --mixed"; # Rollback Changes Locally
+      res = "!git reset --hard"; # Clean All Uncommitted changes
+      lg = "!git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30";
+      graph = "log --oneline --graph --decorate";
+      gl = "config --global -l"; # Show all global git configuration
+      amend = "commit --amend --no-edit"; # amend last commit
     };
 
   };
