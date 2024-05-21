@@ -5,6 +5,8 @@ return {
     config = function()
       require("mini.pairs").setup({})
       require("mini.surround").setup({})
+      require("mini.git").setup({})
+      require("mini.diff").setup({})
       require("mini.files").setup({
         windows = {
           preview = true,
