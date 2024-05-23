@@ -13,6 +13,7 @@ return {
           width_preview = 30,
         },
       })
+      require("mini.statusline").setup()
     end,
   },
 }
