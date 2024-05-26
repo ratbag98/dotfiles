@@ -99,6 +99,10 @@ email = "robr@robrainthorpe.com"; in
       set preview_images_method kitty
     '';
   };
+
+  lf = {
+    enable = true;
+  };
   
   starship = {
     enable = true;
