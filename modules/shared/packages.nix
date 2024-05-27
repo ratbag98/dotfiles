@@ -13,6 +13,7 @@ with pkgs; [
   fd
   gnupg
   html-tidy
+  htmlq
   inlyne
   jq
   mosh
@@ -27,8 +28,9 @@ with pkgs; [
   ripgrep
   sqlite
   tree
-  wget
   unzip
+  wget
+  xh
   zip
   zoom-us
   zoxide
