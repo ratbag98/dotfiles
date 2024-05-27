@@ -30,7 +30,7 @@ email = "robr@robrainthorpe.com"; in
     defaultEditor = true;
     vimAlias = true;
     extraLuaPackages = ps: [ ps.jsregexp ]; 
-   # package = pkgs.neovim; # -nightly;
+    # package = pkgs.neovim-nightly;
   };
   
   lazygit = {
@@ -100,10 +100,14 @@ email = "robr@robrainthorpe.com"; in
     '';
   };
 
-  lf = {
+  yazi = {
     enable = true;
   };
   
+  btop = {
+    enable = true;
+  };
+
   starship = {
     enable = true;
     enableFishIntegration = true;
