@@ -27,7 +27,6 @@
       flake = false;
     };
 
-    # 10 has been released, go back to stable for now
     # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 

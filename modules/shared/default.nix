@@ -12,7 +12,6 @@ in
       allowUnsupportedSystem = true;
     };
 
-    # neovim 10 has been released, go back to stable
     # overlays = [ inputs.neovim-nightly-overlay.overlay];
 
 
