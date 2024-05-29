@@ -93,12 +93,6 @@ email = "robr@robrainthorpe.com"; in
     nix-direnv.enable = true;
   };
 
-  ranger = {
-    enable = true;
-    extraConfig = ''
-      set preview_images_method kitty
-    '';
-  };
 
   yazi = {
     enable = true;
