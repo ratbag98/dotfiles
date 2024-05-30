@@ -4,7 +4,7 @@ return {
     "echasnovski/mini.nvim",
     config = function()
       require("mini.pairs").setup({})
-      require("mini.surround").setup({})
+      require("mini.surround").setup()
       require("mini.git").setup({})
       require("mini.diff").setup({})
       require("mini.files").setup({
@@ -13,7 +13,11 @@ return {
           width_preview = 30,
         },
       })
-      require("mini.statusline").setup()
+      local status_line = require("mini.statusline")
+      status_line.setup()
+      status_line.section_location = function()
+        return ""
+      end
     end,
   },
 }

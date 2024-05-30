@@ -27,7 +27,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Diagnostic keymaps - LSP uses these
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-
-vim.keymap.set("n", "<leader>h", function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end, { desc = "Toggle inlay [h]ints" })

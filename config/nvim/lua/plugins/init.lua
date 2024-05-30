@@ -18,5 +18,6 @@ return {
   { "mbbill/undotree" },
   { "stevearc/dressing.nvim", event = "VeryLazy" },
   { "chrisgrieser/nvim-puppeteer", lazy = false },
+  { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = { signs = false } },
 }
 -- vim: ts=2 sts=2 sw=2 et
