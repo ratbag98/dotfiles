@@ -1,4 +1,4 @@
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+vim.cmd [[ let g:neo_tree_remove_legacy_commands = 1 ]]
 
 return {
   "folke/noice.nvim",
@@ -8,7 +8,7 @@ return {
     "rcarriga/nvim-notify",
   },
   config = function()
-    require("noice").setup({
+    require("noice").setup {
       lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
         override = {
@@ -25,6 +25,6 @@ return {
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = true, -- add a border to hover docs and signature help
       },
-    })
+    }
   end,
 }

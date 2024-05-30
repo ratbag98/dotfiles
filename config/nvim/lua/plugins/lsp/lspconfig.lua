@@ -17,9 +17,9 @@ return {
     },
     config = function()
       -- must be loaded before lspconfig
-      require("neodev").setup({
+      require("neodev").setup {
         library = { plugins = { "neotest" }, types = true },
-      })
+      }
 
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -98,7 +98,7 @@ return {
               group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
               callback = function(event2)
                 vim.lsp.buf.clear_references()
-                vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
+                vim.api.nvim_clear_autocmds { group = "kickstart-lsp-highlight", buffer = event2.buf }
               end,
             })
           end
@@ -116,7 +116,7 @@ return {
       })
 
       -- this snippet enables auto-completion
-      local lspconfig = require("lspconfig")
+      local lspconfig = require "lspconfig"
       local lspCapabilities = vim.lsp.protocol.make_client_capabilities()
       lspCapabilities = vim.tbl_deep_extend("force", lspCapabilities, require("cmp_nvim_lsp").default_capabilities())
       lspCapabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -124,12 +124,12 @@ return {
       local servers = { "taplo", "cssls" }
 
       for _, lsp in ipairs(servers) do
-        lspconfig[lsp].setup({
+        lspconfig[lsp].setup {
           capabilities = lspCapabilities,
-        })
+        }
       end
 
-      lspconfig.tsserver.setup({
+      lspconfig.tsserver.setup {
         capabilities = lspCapabilities,
         -- switch off VariableTypeHints below if they're too noisy
         settings = {
@@ -158,9 +158,9 @@ return {
             },
           },
         },
-      })
+      }
 
-      lspconfig.pyright.setup({
+      lspconfig.pyright.setup {
         capabilities = lspCapabilities,
         filetypes = { "python" },
         settings = {
@@ -169,12 +169,12 @@ return {
             diagnosticMode = "workspace",
           },
         },
-      })
+      }
 
       -- ruff uses an LSP proxy, therefore it needs to be enabled as if it
       -- were a LSP. In practice, ruff only provides linter-like diagnostics
       -- and some code actions, and is not a full LSP yet.
-      lspconfig.ruff_lsp.setup({
+      lspconfig.ruff_lsp.setup {
         capabilities = lspCapabilities,
         settings = {
           organizeImports = true,
@@ -183,15 +183,15 @@ return {
         on_attach = function(client)
           client.server_capabilities.hoverProvider = false
         end,
-      })
+      }
 
-      lspconfig.html.setup({
+      lspconfig.html.setup {
         capabilities = lspCapabilities,
         filetypes = { "html", "heex" },
-      })
+      }
 
       -- configure individual LSP modules with more options
-      lspconfig.lua_ls.setup({
+      lspconfig.lua_ls.setup {
         capabilities = lspCapabilities,
         Lua = {
           completion = {
@@ -201,9 +201,9 @@ return {
           workspace = { checkThirdParty = false },
           telemetry = { enable = false },
         },
-      })
+      }
 
-      lspconfig.tailwindcss.setup({
+      lspconfig.tailwindcss.setup {
         capabilities = lspCapabilities,
         filetypes = { "html", "eelixir", "heex" },
         init_options = {
@@ -222,7 +222,7 @@ return {
             },
           },
         },
-      })
+      }
 
       local _border = "rounded"
 

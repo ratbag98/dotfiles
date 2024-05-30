@@ -69,7 +69,7 @@ return {
         repl_definition = {
           python = {
             command = function()
-              local ipythonAvailable = vim.fn.executable("ipython") == 1
+              local ipythonAvailable = vim.fn.executable "ipython" == 1
               local binary = ipythonAvailable and "ipython" or "python3"
               return { binary }
             end,

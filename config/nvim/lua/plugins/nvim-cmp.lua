@@ -9,7 +9,7 @@ return {
       -- Build Step is needed for regex support in snippets.
       -- This step is not supported in many windows environments.
       -- Remove the below condition to re-enable on windows.
-      if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
+      if vim.fn.has "win32" == 1 or vim.fn.executable "make" == 0 then
         return
       end
       return "make install_jsregexp"
@@ -22,18 +22,18 @@ return {
       config = function()
         -- load vscode-style snippets from plugins (eg friendly-snippets)
         require("luasnip.loaders.from_vscode").lazy_load()
-        require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets/" })
+        require("luasnip.loaders.from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets/" }
       end,
     }, -- useful snippets
     "onsails/lspkind.nvim", -- vs-code like pictograms
     "hrsh7th/cmp-nvim-lsp-signature-help", -- highlight parameter
   },
   config = function()
-    local cmp = require("cmp")
-    local luasnip = require("luasnip")
-    luasnip.config.setup({})
+    local cmp = require "cmp"
+    local luasnip = require "luasnip"
+    luasnip.config.setup {}
 
-    cmp.setup({
+    cmp.setup {
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
@@ -46,14 +46,14 @@ return {
       -- },
       window = {
         completion = {
-          border = "rounded",
+          border = "none",
           winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
           col_offset = -3,
           side_padding = 0,
         },
         documentation = cmp.config.window.bordered(),
       },
-      mapping = cmp.mapping.preset.insert({
+      mapping = cmp.mapping.preset.insert {
 
         -- Select the [n]ext item
         ["<C-n>"] = cmp.mapping.select_next_item(),
@@ -67,7 +67,7 @@ return {
         -- Accept ([y]es) the completion.
         --  This will auto-import if your LSP supports it.
         --  This will expand snippets if the LSP sent a snippet.
-        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+        ["<C-y>"] = cmp.mapping.confirm { select = true },
 
         -- If you prefer more traditional completion keymaps,
         -- you can uncomment the following lines
@@ -78,7 +78,7 @@ return {
         -- Manually trigger a completion from nvim-cmp.
         --  Generally you don't need this, because nvim-cmp will display
         --  completions whenever it has completion options available.
-        ["<C-Space>"] = cmp.mapping.complete({}),
+        ["<C-Space>"] = cmp.mapping.complete {},
 
         -- Think of <c-l> as moving to the right of your snippet expansion.
         --  So if you have a snippet that's like:
@@ -98,7 +98,7 @@ return {
             luasnip.jump(-1)
           end
         end, { "i", "s" }),
-      }),
+      },
       sources = {
         { name = "path" }, -- file system paths
         { name = "nvim_lsp", keyword_length = 1 },
@@ -109,7 +109,7 @@ return {
       formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-          local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+          local kind = require("lspkind").cmp_format { mode = "symbol_text", maxwidth = 50 }(entry, vim_item)
           local strings = vim.split(kind.kind, "%s", { trimempty = true })
           kind.kind = " " .. (strings[1] or "") .. " "
           kind.menu = "    (" .. (strings[2] or "") .. ")"
@@ -117,6 +117,6 @@ return {
           return kind
         end,
       },
-    })
+    }
   end,
 }
