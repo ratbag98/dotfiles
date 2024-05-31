@@ -32,6 +32,6 @@ return {
     },
   },
   config = function()
-    require "config.completion"
+    require "custom.completion"
   end,
 }
