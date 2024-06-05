@@ -10,7 +10,8 @@ cmp.setup {
   -- Enable luasnip to handle snippet expansion for nvim-cmp
   snippet = {
     expand = function(args)
-      vim.snippet.expand(args.body)
+      local luasnip = require "luasnip"
+      luasnip.snippet.expand(args.body)
     end,
   },
   completion = { completeopt = "menu,menuone,noinsert" },
@@ -46,6 +47,7 @@ cmp.setup {
     { name = "nvim_lsp", keyword_length = 1 },
     { name = "path" }, -- file system paths
     { name = "buffer", keyword_length = 3 }, -- text within current buffer
+    { name = "luasnip" },
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },

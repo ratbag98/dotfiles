@@ -1,7 +1,6 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 local opt = vim.opt
-print "Got Here!"
 
 opt.inccommand = "split"
 

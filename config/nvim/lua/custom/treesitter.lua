@@ -2,7 +2,7 @@ local M = {}
 
 M.setup = function()
   require("nvim-treesitter.install").prefer_git = true
-  require("nvim-treesitter").setup {
+  require("nvim-treesitter.configs").setup {
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = { "lua", "elixir", "eex", "heex" },
 

@@ -9,6 +9,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path", -- source for file system paths
     "hrsh7th/cmp-buffer", -- source for text in buffer
+    "rafamadriz/friendly-snippets",
     {
       "L3MON4D3/LuaSnip", -- snippet engine
       build = function()
@@ -20,18 +21,13 @@ return {
         end
         return "make install_jsregexp"
       end,
+      dependencies = { "rafamadriz/friendly-snippets" },
     },
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    {
-      "rafamadriz/friendly-snippets",
-      config = function()
-        -- load vscode-style snippets from plugins (eg friendly-snippets)
-        require("luasnip.loaders.from_vscode").lazy_load()
-        require("luasnip.loaders.from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets/" }
-      end,
-    },
   },
   config = function()
+    require("luasnip.loaders.from_vscode").lazy_load()
+    require("luasnip.loaders.from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets/" }
     require "custom.completion"
   end,
 }
