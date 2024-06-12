@@ -35,7 +35,7 @@ with pkgs; [
   zoom-us
   zoxide
 
-  # fonts
+# fonts
   meslo-lgs-nf
   (nerdfonts.override { fonts = ["JetBrainsMono" "FiraCode"]; })
 
@@ -45,14 +45,16 @@ with pkgs; [
   nodejs
 
 
-  # Mason replacement
   taplo
   stylua
   lua-language-server
   tailwindcss-language-server
   vscode-langservers-extracted 
   nodePackages_latest.typescript-language-server
+
+# Python 
+  black
+  python312
   ruff-lsp
   pyright
-
 ]
