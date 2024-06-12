@@ -11,7 +11,7 @@ cmp.setup {
   snippet = {
     expand = function(args)
       local luasnip = require "luasnip"
-      luasnip.snippet.expand(args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
   completion = { completeopt = "menu,menuone,noinsert" },
