@@ -34,7 +34,7 @@ let user = "rob"; in
   ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
 
 
-  fonts.fontDir.enable = true;
+  # fonts.fontDir.enable = true;
 
   security.pam.enableSudoTouchIdAuth = true;
 
