@@ -9,7 +9,7 @@ return {
     {
       "<leader>f",
       function()
-        require("conform").format({ lsp_fallback = true, timeout_ms = 500 })
+        require("conform").format { lsp_fallback = true, timeout_ms = 500 }
       end,
       mode = "",
       desc = "[F]ormat buffer",
@@ -21,6 +21,7 @@ return {
       python = { "black" },
       lua = { "stylua" },
       nix = { "nixpkgs-fmt" },
+      elixir = { "mix" },
     },
     -- enable format-on-save
     format_on_save = function(bufnr)
