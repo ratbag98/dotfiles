@@ -36,15 +36,14 @@ with pkgs; [
   zoxide
 
 # fonts
-  meslo-lgs-nf
-  (nerdfonts.override { fonts = ["JetBrainsMono" "FiraCode"]; })
+  (nerdfonts.override { fonts = ["JetBrainsMono" "FiraCode" "Meslo"]; })
 
 # Node.js development tools
-  nodePackages.npm # globally install npm
-  nodePackages.prettier
-  nodejs
+  # nodePackages.npm # globally install npm
+  # nodePackages.prettier
+  nodejs_22
 
-
+  # neovim and other LSP client requirements
   taplo
   stylua
   lua-language-server
@@ -54,7 +53,7 @@ with pkgs; [
 
 # Python 
   black
-  python312
+  python3 # leave it at 3, otherwise multiple versions install
   ruff-lsp
   pyright
 ]
