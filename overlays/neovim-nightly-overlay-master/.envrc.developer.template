@@ -1,1 +1,0 @@
-use flake . --override-input neovim-src /path/to/neovim

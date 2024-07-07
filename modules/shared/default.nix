@@ -12,19 +12,18 @@ in
       allowUnsupportedSystem = true;
     };
 
-    # overlays = [ inputs.neovim-nightly-overlay.overlay];
+    overlays = # [ inputs.neovim-nightly-overlay.overlays.default];
 
 
-    #  # Apply each overlay found in the /overlays directory
-    #  let path = ../../overlays; in with builtins;
-    #  map (n: import (path + ("/" + n)))
-    #      (filter (n: match ".*\\.nix" n != null ||
-    #                  pathExists (path + ("/" + n + "/default.nix")))
-    #              (attrNames (readDir path)))
-    #  #++ [(import (builtins.fetchTarball {
-    #  #         url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
-    #  #     }))]
-    #       ;
-
+    # Apply each overlay found in the /overlays directory
+    let path = ../../overlays; in with builtins;
+    map (n: import (path + ("/" + n)))
+        (filter (n: match ".*\\.nix" n != null ||
+                    pathExists (path + ("/" + n + "/default.nix")))
+                (attrNames (readDir path)))
+    #++ [(import (builtins.fetchTarball {
+    #         url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+    #     }))] ;
+    ;
   };
 }
