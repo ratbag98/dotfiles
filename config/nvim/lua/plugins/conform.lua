@@ -12,7 +12,7 @@ return {
         require("conform").format { lsp_fallback = true, timeout_ms = 500 }
       end,
       mode = "",
-      desc = "[F]ormat buffer",
+      desc = "Format buffer",
     },
   },
   opts = {

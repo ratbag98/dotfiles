@@ -14,7 +14,7 @@ with pkgs; [
   gnupg
   html-tidy
   htmlq
-  # inlyne - 2024-07-09 fails to build
+  # inlyne # - 2024-07-09 fails to build
   jq
   mosh
   nano
