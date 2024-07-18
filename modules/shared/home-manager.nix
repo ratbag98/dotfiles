@@ -29,7 +29,7 @@ email = "robr@robrainthorpe.com"; in
     enable = true;
     font = {
       name = "JetBrainsMono Nerd Font Mono";
-      size = 17;
+      size = 20;
     };
     shellIntegration.enableFishIntegration = true;
     theme = "Tokyo Night Storm";
