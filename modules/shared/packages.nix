@@ -51,9 +51,10 @@ with pkgs; [
   vscode-langservers-extracted 
   nodePackages_latest.typescript-language-server
 
-# Python 
+  # Python 
   black
   python3 # leave it at 3, otherwise multiple versions install
   ruff-lsp
   pyright
+
 ]

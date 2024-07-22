@@ -65,9 +65,7 @@ let user = "rob"; in
     # Create /etc/zshrc that loads the nix-darwin environment.
     zsh.enable = true;
 
-    fish  = {
-      enable = true;
-    };
+    fish.enable = true;
   };
 
 }

@@ -129,6 +129,11 @@ return {
         }
       end
 
+      lspconfig.elixirls.setup {
+        cmd = { "elixir-ls" },
+        capabilities = lspCapabilities,
+      }
+
       lspconfig.tsserver.setup {
         capabilities = lspCapabilities,
         -- switch off VariableTypeHints below if they're too noisy
