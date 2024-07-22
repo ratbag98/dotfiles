@@ -82,9 +82,7 @@ in
       xdg.configFile."bat".source = ../../config/bat;
       xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/config/nvim";
 
-      # Marked broken Oct 20, 2022 check later to remove this
-      # https://github.com/nix-community/home-manager/issues/3344
-      manual.manpages.enable = false;
+      manual.manpages.enable = true;
     };
   };
 

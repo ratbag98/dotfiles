@@ -81,7 +81,7 @@
     in 
       darwin.lib.darwinSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = inputs; 
         modules = [
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew

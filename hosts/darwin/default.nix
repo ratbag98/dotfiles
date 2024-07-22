@@ -6,6 +6,7 @@ let user = "rob"; in
   imports = [
     ../../modules/darwin/home-manager.nix
     ../../modules/shared
+    ../../modules/shared/cachix
   ];
   
   services.nix-daemon.enable = true;
