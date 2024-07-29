@@ -129,10 +129,10 @@ return {
         }
       end
 
-      lspconfig.elixirls.setup {
-        cmd = { "elixir-ls" },
-        capabilities = lspCapabilities,
-      }
+      -- lspconfig.elixirls.setup {
+      --   cmd = { "elixir-ls" },
+      --   capabilities = lspCapabilities,
+      -- }
 
       lspconfig.tsserver.setup {
         capabilities = lspCapabilities,
