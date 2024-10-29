@@ -32,7 +32,7 @@ email = "robr@robrainthorpe.com"; in
       size = 20;
     };
     shellIntegration.enableFishIntegration = true;
-    theme = "Tokyo Night Storm";
+    themeFile = "tokyo_night_storm";
     settings = {
        bold_font = "JetBrainsMono Nerd Font Mono ExtraBold";
        bold_italic_font = "JetBrainsMono Nerd Font Mono ExtraBold Italic";

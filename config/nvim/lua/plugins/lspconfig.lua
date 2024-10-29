@@ -13,14 +13,8 @@ return {
         "j-hui/fidget.nvim",
         opts = { notification = { window = { winblend = 0 } } },
       },
-      { "folke/neodev.nvim", opts = {} },
     },
     config = function()
-      -- must be loaded before lspconfig
-      require("neodev").setup {
-        library = { plugins = { "neotest" }, types = true },
-      }
-
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
         callback = function(event)
@@ -134,7 +128,7 @@ return {
       --   capabilities = lspCapabilities,
       -- }
 
-      lspconfig.tsserver.setup {
+      lspconfig.ts_ls.setup {
         capabilities = lspCapabilities,
         -- switch off VariableTypeHints below if they're too noisy
         settings = {

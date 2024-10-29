@@ -14,9 +14,9 @@ with pkgs; [
   gnupg
   html-tidy
   htmlq
-  # inlyne # - 2024-07-09 fails to build
+  inlyne 
   jq
-  mosh
+  # mosh # - 2024-10-29 fails
   nano
   nixpkgs-fmt
   nmap
